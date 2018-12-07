@@ -1,0 +1,105 @@
+<img class="ml-5 mt-4" src="<%= image(@conn, "chicode.svg") %>">
+<div class="container mt-10">
+  <section class="mb-10">
+    <div class="root__circle"></div>
+    <h2 class="display-1 font-weight-bold font-muli w-75 mx-auto mb-5">We make students&nbsp;<span class="text-red-light d-inline-block">love&nbsp;</span>coding</h2>
+    <h4 class="font-weight-bold w-75 mx-auto">A series of inclusive communities that offer a new perspective on CS</h4>
+  </section>
+  <section>
+    <img class="mx-auto" src="<%= image(@conn, "codeathon.png") %>">
+    <h2 class="text-shadow-dark text-grey h2-section mt-m-5">CODEATHON</h2>
+    <p class="text-center w-75 mx-auto">Nothing brings students together like working on the same project. That’s why we make codeathons as social and creative as possible - code is just one part of what’s practiced, along with art, music, design, and so on. And if someone’s a beginner, then no problem! Our workshops and mentors gladly help them along the way.</p>
+    <div class="row mt-7">
+      <div class="col-lg font-chicago">
+        <h3 class="text-shadow-dark text-red-light mb-5">Upcoming Events</h3>
+        <ul>
+        <%= for event <- @events do
+          content_tag :li, class: "pre mb-4" do
+             raw "#{event.date}     #{safe_to_string(content_tag :a, event.name, href: event.link)}"
+          end
+        end %>
+        </ul>
+        <a href="mailto:hello@chicode.org">Help us make more!</a>
+      </div>
+      <div class="col-lg">
+        <p>Keep me updated</p>
+        <%= form_for @conn, subscribe_path(@conn, :new), fn f -> %>
+          <%= text_input f, :for, placeholder: "joe@joe.party" %>
+          <%= hidden_input f, :ocation, value: "events" %>
+          <%= submit "done" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <img src="<%= image(@conn, "clubs.svg") %>">
+    <img src="<%= image(@conn, "club.png") %>">
+    <p>Clubs give students a more intimate community to code with, bringing together schools. They meet more often than events and so have a more informal atmosphere.</p>
+    <p>ALSO OUR</p>
+    <div class="d-flex">
+      <img src="<%= image(@conn, "arrow-right.svg") %>">
+      <a href="CLUB BOOSTER PACK"></a>
+      <img src="<%= image(@conn, "arrow-left.svg") %>">
+    </div>
+    <p>provides everything you need to start a club</p>
+    <div class="d-flex">
+      <p>promotional materials</p>
+      <p>teaching resources</p>
+      <p>your very own website</p>
+    </div>
+  </section>
+</div>
+
+<section class="bg-orange pb-1">
+  <marquee class="font-chicago">and of course our free open-source community-powered beautiful awesome cutting-edge educational platform which will become an entire community in its own right</marquee>
+  <h2 hidden class="h2-section">CODING WORKSHOPS</h2>
+  <img class="w-100 mb-10" src="<%= image(@conn, "codingworkshops.svg") %>">
+  <img class="mx-auto w-50 mb-5" src="<%= image(@conn, "chris.svg") %>">
+  <div class="container">
+    <div class="w-75 mx-auto">
+      <p>We believe that having the right teaching tools is just as important as having the right environment. That’s why we created our own educational platform, codingworkshops.</p>
+      <p>After teaching at our own clubs, we realized the value of a self-driven but approachable platform. codingworkshops tries to be both by combining codeacademy’s teaching strategy with the fun of an online game engine.</p>
+    </div>
+  </div>
+  <button class="cw__button"><a href="codingworkshops.org">JOIN</a></button>
+</section>
+
+<div class="container">
+  <section class="w-75 mx-auto">
+    <h2 class="mb-5 h2-section">But why?</h2>
+    <pre><code>&gt;&gt;&gt; <span class="p">all</span>([<span class="p">student</span>.<span class="p">can_code</span>() <span class="p">for student in chicago_students</span>])
+<span class="y">True</span></code></pre>
+    <p>Our city has a problem - many young people are hesitant to approach coding. And it’s not because they aren’t ‘the right type of person’, but because they were never told they could do it and have fun at the same time.</p>
+
+    <pre><code>&gt;&gt;&gt; "<span class="p">joy</span>" <span class="p">in EMOTIONS_THAT_CAN_BE_EVOKED_BY_CODING</span>
+<span class="y">True</span></code></pre>
+    <p>Traditional school classes often treat coding like a pedantic subject that requires memorization and standardized testing. This is a bad approach because it fails to show students the joy and self-actualization that can come from the activity.</p>
+
+    <pre><code>&gt;&gt;&gt; <span class="p">Coder</span>(<span class="p">part_of</span>=<span class="p">"community"</span>).<span class="p">enjoyment</span> &gt; <span class="p">Coder</span>().<span class="p">enjoyment</span>
+<span class="y">True</span></code></pre>
+    <p>We believe that the solution involves showing students a new side to coding, one that places a heavy emphasis on creativity and community. In essence, our programs encourage social, project-based learning -- this allows students to walk out with a feeling of accomplishment and confidence.</p>
+  </section>
+
+  <section>
+    <h2 class="bg-blue text-left text-white stretch-25 mb-5 h2-section">We believe that coding is for everyone</h2>
+    <p class="w-50">As a group of high school students ourselves, we genuinely believe that coding can be used as a force for good. All of us have used coding to empower ourselves and our communities, and we hope that someday you will too. If you have any questions, or just want to chat, feel free to reach out to us!</p>
+    <div class="row">
+      <div class="col-lg">
+        <a href="mailto:hello@chicode.org">get in touch</a>
+      </div>
+      <div class="col-lg">
+        <%= form_for @conn, subscribe_path(@conn, :new), fn f -> %>
+          <%= text_input f, :for, placeholder: "joe@joe.party" %>
+          <%= hidden_input f, :location, value: "footer" %>
+          <%= submit "done" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="font-chicago">
+  <p class="pre text-muted">100100101011011010111101111101111110000101100101100010111000101100111011001010101010101111101101010101110             100101001010101                                    10001101011101001110                                                     101110110110110101111011010</p>
+  <p class="text-center">we believe in FOSS, so all of our code is available on github. send us a PR!</p>
+</footer>

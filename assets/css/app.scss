@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Karla|Muli');
+@import './fonts/stylesheet.css';
+
+$font-family-base: Karla;
+
+$gray-150: hsl(0, 0, 95%);
+
+$primary: hsl(201, 87%, 54%);
+$primary-light: hsl(201, 100%, 84%);
+$danger: hsl(0, 100%, 42%);
+$success: hsl(158, 68%, 45%);
+
+$colors: (
+  "red-light": #FF98AB,
+  "purple-light": #E7EAFF,
+  "red": #FF5959,
+  "green": #59FF91,
+  "purple": #717EF0,
+  "blue": #3705FF,
+  "orange": #FF9B3F,
+  "grey": #E9E9E9,
+  "purple-dark": #4341CA,
+  "yellow-dark": #CA8B41,
+);
+
+$theme-colors: (
+  "primary-light": $primary-light,
+);
+
+$text-muted: hsl(0, 0, 70%);
+$headings-line-height: 1.5;
+
+$font-size-base: 1.5rem;
+
+$h3-font-size: 4rem;
+$h2-font-size: 6rem;
+$h1-font-size: 7rem;
+
+@import "../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/utilities";
+
+@each $color, $value in $theme-colors {
+  .btn-text-#{$color} {
+    color: map_get($theme-colors, $color);
+    font-weight: bold;
+  }
+}
+@each $color, $value in $colors {
+  .btn-text-#{$color} {
+    color: map_get($colors, $color);
+    font-weight: bold;
+  }
+}
+@each $color, $value in $colors {
+  .text-#{$color} {
+    color: map_get($colors, $color);
+  }
+}
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    background: map_get($colors, $color);
+  }
+}
+
+.display-1 {
+  font-size: 7rem;
+}
+
+// FIXES
+
+button {
+  cursor: pointer;
+}
+
+button, input {
+  border: 0;
+  padding: 0;
+  &:focus {
+    outline: 0;
+  }
+  background-color: transparent;
+}
+
+button, input, label, img {
+  display: block;
+}
+
+.d-flex, .row {
+  & > * {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  padding-left: 0;
+  > * {
+    list-style: none;
+  }
+}
+
+// STYLES
+a {
+  color: map_get($colors, "purple");
+  &:hover {
+    color: map_get($colors, "purple-dark");
+  }
+}
+
+.h2-section {
+  font-family: Chicago;
+  text-align: center;
+  font-size: 10rem;
+}
+
+.text-shadow-dark {
+  text-shadow: 5px 5px black;
+}
+
+.font-muli {
+  font-family: Muli;
+}
+.font-chicago {
+  font-family: Chicago;
+  &, & * {
+    line-height: 1.2;
+  }
+}
+
+code {
+  background: #F5F5F5;
+  box-shadow: 0 4px hsl(0, 0, 75);
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  font-family: Hermit;
+  font-size: $font-size-sm;
+  span.p {
+    color: map_get($colors, "purple-dark");
+  }
+  span.y {
+    color: map_get($colors, "yellow-dark");
+  }
+  margin-top: 2rem;
+}
+
+.stretch-25 {
+  margin-left: -25%;
+  margin-right: -25%;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+section {
+  margin-bottom: 6rem;
+}
+
+.pre {
+  white-space: pre-wrap;
+}
+
+.mt-10 {
+  margin-top: 10rem;
+}
+
+.mt-7 {
+  margin-top: 7rem;
+}
+
+.mb-10 {
+  margin-bottom: 10rem;
+}
+
+.cw__button {
+  border: 5px solid white;
+  font-family: Chicago;
+  margin: 4rem auto;
+  padding: .5rem 1rem;
+
+  > * {
+    color: white;
+    font-size: $h3-font-size;
+  }
+}
+
+.root__circle {
+  width: 700px;
+  height: 700px;
+  margin-left: 5%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 100%;
+  background: map_get($colors, "purple-light");
+}
+
+.mt-m-5 {
+  margin-top: -7rem;
+}

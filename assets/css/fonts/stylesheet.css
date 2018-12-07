@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Chicago';
+    src: url('Chicago.woff2') format('woff2'),
+        url('Chicago.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hermit';
+    src: url('Hermit-medium.woff2') format('woff2'),
+        url('Hermit-medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
