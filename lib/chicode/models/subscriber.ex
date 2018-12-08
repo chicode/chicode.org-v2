@@ -14,6 +14,7 @@ defmodule Chicode.Subscriber do
     user
     |> cast(attrs, [:email, :location])
     |> validate_required([:email, :location])
+    |> unique_constraint(:email, message: "already subscribed!")
     |> custom_validation(:email, &valid_email?/1, "Invalid email address")
   end
 end

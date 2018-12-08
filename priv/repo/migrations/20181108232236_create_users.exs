@@ -3,15 +3,16 @@ defmodule Chicode.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
-      add :first_name, :string
-      add :last_name, :string
-      add :email, :string
-      add :encrypted_password, :string
-      add :password, :string
-      add :bio, :string
+      add(:username, :string)
+      add(:first_name, :string)
+      add(:last_name, :string)
+      add(:email, :string)
+      add(:bio, :string)
+      add(:password_hash, :string)
 
       timestamps()
     end
 
+    create(unique_index(:users, [:username]))
   end
 end
