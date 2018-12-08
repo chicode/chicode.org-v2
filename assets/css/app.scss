@@ -225,10 +225,17 @@ section {
 
   max-width: 400px;
   display: flex;
-  justify-content: space-between;
+
+  // fix for element sticking out on firefox
+  justify-content: space-around;
+  box-sizing: content-box;
 
   .input {
     width: 100%;
+    color: black;
+  }
+  .submit {
+    color: map_get($colors, "purple");
   }
 }
 
