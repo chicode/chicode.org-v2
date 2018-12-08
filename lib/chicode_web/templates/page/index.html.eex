@@ -85,7 +85,7 @@
   </section>
 
   <section>
-    <h2 class="bg-blue text-left text-white stretch mb-5 font-chicago">We believe that coding is for everyone</h2>
+    <div class="bg-blue stretch"><h2 class="text-left text-white mb-5 font-chicago mx-auto w-75">We believe that coding is for everyone</h2></div>
     <p class="w-50">As a group of high school students ourselves, we genuinely believe that coding can be used as a force for good. All of us have used coding to empower ourselves and our communities, and we hope that someday you will too. If you have any questions, or just want to chat, feel free to reach out to us!</p>
     <div class="d-flex mt-5">
       <div class="mr-7">
