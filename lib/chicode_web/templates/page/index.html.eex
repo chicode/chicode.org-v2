@@ -73,15 +73,15 @@
     <h2 class="mb-5 h2-section">But why?</h2>
     <pre><code>&gt;&gt;&gt; <span class="p">all</span>([<span class="p">student</span>.<span class="p">can_code</span>() <span class="p">for student in chicago_students</span>])
 <span class="y">True</span></code></pre>
-    <p>Our city has a problem - many young people are hesitant to approach coding. And it’s not because they aren’t “the right type of person”, but because they were never told they could do it and have fun at the same time.</p>
+    <p class="pl-3">Our city has a problem - many young people are hesitant to approach coding. And it’s not because they aren’t “the right type of person”, but because they were never told they could do it and have fun at the same time.</p>
 
     <pre><code>&gt;&gt;&gt; "<span class="p">joy</span>" <span class="p">in EMOTIONS_THAT_CAN_BE_EVOKED_BY_CODING</span>
 <span class="y">True</span></code></pre>
-    <p>Traditional school classes often treat coding like a pedantic subject that requires memorization and standardized testing. This is a bad approach because it fails to show students the joy and self-actualization that can come from the activity.</p>
+    <p class="pl-3">Traditional school classes often treat coding like a pedantic subject that requires memorization and standardized testing. This is a bad approach because it fails to show students the joy and self-actualization that can come from the activity.</p>
 
     <pre><code>&gt;&gt;&gt; <span class="p">Coder</span>(<span class="p">part_of</span>=<span class="p">"community"</span>).<span class="p">enjoyment</span> &gt; <span class="p">Coder</span>().<span class="p">enjoyment</span>
 <span class="y">True</span></code></pre>
-    <p>We believe that the solution involves showing students a new side to coding, one that places a heavy emphasis on creativity and community. In essence, our programs encourage social, project-based learning -- this allows students to walk out with a feeling of accomplishment and confidence.</p>
+    <p class="pl-3">We believe that the solution involves showing students a new side to coding, one that places a heavy emphasis on creativity and community. In essence, our programs encourage social, project-based learning -- this allows students to walk out with a feeling of accomplishment and confidence.</p>
   </section>
 
   <section>
