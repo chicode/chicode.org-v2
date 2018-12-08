@@ -129,6 +129,11 @@ a {
   }
 }
 
+// fix for weird x overflow (maybe because of .stretch)
+html {
+  overflow-x: hidden;
+}
+
 code {
   background: #F5F5F5;
   box-shadow: 0 4px hsl(0, 0, 75);
@@ -146,12 +151,16 @@ code {
   margin-top: 2rem;
 }
 
-.stretch-25 {
-  margin-left: -100%;
-  margin-right: -100%;
-  padding-left: 100%;
-  padding-right: 100%;
-  overflow: hidden;
+// https://css-tricks.com/full-width-containers-limited-width-parents/
+.stretch {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 
 section {
@@ -256,11 +265,10 @@ section {
   justify-content: space-between;
 
   .stem {
-    @extend .stretch-25;
+    @extend .stretch;
     height: 20px;
     background: map_get($colors, "blue");
     position: absolute;
-    width: 100%;
     margin-top: 100px;
   }
 
