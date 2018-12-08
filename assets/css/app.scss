@@ -166,6 +166,10 @@ section {
   margin-top: 10rem;
 }
 
+.mt-20 {
+  margin-top: 20rem;
+}
+
 .mt-7 {
   margin-top: 7rem;
 }
@@ -208,21 +212,23 @@ section {
   background: map_get($colors, "purple-light");
 }
 
-.events__interest {
-  max-width: 400px;
-  border: 3px solid map_get($colors, "purple");
+.button-formal {
+  border: 2px solid map_get($colors, "purple");
   border-radius: 5px;
+  color: map_get($colors, "purple");
+  font-family: Chicago;
+  padding: 5px 10px;
+}
+
+.events__interest, .footer__interest {
+  @extend .button-formal;
+
+  max-width: 400px;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-
 
   .input {
     width: 100%;
-  }
-
-  .submit {
-    color: map_get($colors, "purple")
   }
 }
 

@@ -85,14 +85,14 @@
   </section>
 
   <section>
-    <h2 class="bg-blue text-left text-white stretch-25 mb-5 h2-section">We believe that coding is for everyone</h2>
+    <h2 class="bg-blue text-left text-white stretch-25 mb-5 font-chicago">We believe that coding is for everyone</h2>
     <p class="w-50">As a group of high school students ourselves, we genuinely believe that coding can be used as a force for good. All of us have used coding to empower ourselves and our communities, and we hope that someday you will too. If you have any questions, or just want to chat, feel free to reach out to us!</p>
-    <div class="row">
+    <div class="row mt-5">
       <div class="col-lg">
-        <a href="mailto:hello@chicode.org">get in touch</a>
+        <a class="button-formal" href="mailto:hello@chicode.org">get in touch</a>
       </div>
       <div class="col-lg">
-        <%= form_for @conn, subscribe_path(@conn, :new), fn f -> %>
+        <%= form_for @conn, subscribe_path(@conn, :new), [class: "footer__interest"], fn f -> %>
           <%= text_input f, :for, placeholder: "joe@joe.party" %>
           <%= hidden_input f, :location, value: "footer" %>
           <%= submit "done" %>
@@ -102,7 +102,7 @@
   </section>
 </div>
 
-<footer class="font-chicago">
-  <p class="pre text-muted">100100101011011010111101111101111110000101100101100010111000101100111011001010101010101111101101010101110             100101001010101                                    10001101011101001110                                                     101110110110110101111011010</p>
-  <p class="text-center">we believe in FOSS, so all of our code is available on github. send us a PR!</p>
+<footer class="font-chicago mt-20">
+  <p class="pre text-muted text-center">100100101011011010111101111101111110000101100101100010111000101100111011001010101010101111101101010101110             100101001010101                                    10001101011101001110                                                     101110110110110101111011010                              1010110111111111111111111011010101010101011111111001010010101001010101010101</p>
+  <p class="text-center">we believe in FOSS, so all of our code is available on <a href="https://github.com/chicode/">github</a>. send us a PR!</p>
 </footer>
