@@ -22,6 +22,7 @@ $colors: (
   "purple-dark": #4341CA,
   "yellow-dark": #CA8B41,
   "pink": #FF4B6C,
+  "black": black,
 );
 
 $theme-colors: (
@@ -29,7 +30,7 @@ $theme-colors: (
 );
 
 $text-muted: hsl(0, 0, 70%);
-$headings-line-height: 1.5;
+$headings-line-height: 1.6;
 
 $font-size-base: 1.5rem;
 
@@ -164,7 +165,7 @@ code {
 }
 
 section {
-  margin-bottom: 6rem;
+  margin-bottom: 13rem;
 }
 
 .pre {
@@ -191,6 +192,10 @@ section {
   margin-bottom: 4rem;
 }
 
+.mt-6 {
+  margin-top: 4rem;
+}
+
 .mt-m-5 {
   margin-top: -7rem;
 }
@@ -199,11 +204,16 @@ section {
   margin-bottom: 10rem;
 }
 
+.mr-7 {
+  margin-right: 7rem;
+}
+
 .cw__button {
-  border: 5px solid white;
+  background: black;
+  padding: 1rem 1rem;
   font-family: Chicago;
+  box-shadow: 10px 10px white;
   margin: 4rem auto;
-  padding: .5rem 1rem;
 
   > * {
     color: white;
@@ -240,12 +250,16 @@ section {
   box-sizing: content-box;
 
   .input {
-    width: 100%;
+    flex: 1;
     color: black;
   }
   .submit {
     color: map_get($colors, "purple");
   }
+}
+
+.footer__interest {
+  max-width: unset;
 }
 
 .clubs__pack {
