@@ -131,7 +131,7 @@ a {
 }
 
 // fix for weird x overflow (maybe because of .stretch)
-html {
+html, body {
   overflow-x: hidden;
 }
 
