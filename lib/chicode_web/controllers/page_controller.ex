@@ -42,6 +42,6 @@ defmodule ChicodeWeb.PageController do
   end
 
   defp events() do
-    [%{date: "May 5", name: "Jones Jam", link: "jonesjam.org"}]
+    [%{date: "May 5", name: "Jones Jam", link: "https://jonesjam.org"}]
   end
 end
