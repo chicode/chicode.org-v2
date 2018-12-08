@@ -3,7 +3,6 @@ defmodule Chicode.User do
   import Ecto.Changeset
   import Chicode.Helpers
 
-  @derive {Jason.Encoder, only: [:username, :first_name, :last_name, :email, :bio, :id]}
   schema "users" do
     field :username, :string
     field :first_name, :string
@@ -32,10 +31,5 @@ defmodule Chicode.User do
     |> custom_validation(:email, &valid_email?/1, "Invalid email address")
     |> validate_length(:password, min: 6, max: 50)
     |> custom_change(:password, :password_hash, &Comeonin.Bcrypt.hashpwsalt/1)
-  end
-
-  defp valid_email?(email) do
-    ~r/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    |> Regex.match?(email)
   end
 end

@@ -1,3 +1,11 @@
+<%= if location = get_flash(@conn, :location) do %>
+    <script>
+        window.onload = function () {
+            document.querySelector('.<%= location %>').scrollIntoView()
+        }
+    </script>
+<% end %>
+
 <img class="ml-5 mt-4" src="<%= image(@conn, "chicode.svg") %>">
 <div class="container mt-7">
   <section class="mb-10">
@@ -23,9 +31,10 @@
       </div>
       <div class="col-lg">
         <p>Keep me updated</p>
+        <%= get_flash(@conn, :info) %>
         <%= form_for @conn, subscribe_path(@conn, :new), [class: "events__interest"], fn f -> %>
           <%= text_input f, :for, placeholder: "joe@joe.party", class: "input" %>
-          <%= hidden_input f, :ocation, value: "events" %>
+          <%= hidden_input f, :location, value: "events__interest" %>
           <%= submit "done", class: "submit" %>
         <% end %>
       </div>
@@ -33,9 +42,7 @@
   </section>
 
   <section>
-    <img class="w-100 mx-auto mb-7" src="<%= image(@conn, "clubs.svg") %>">
-    <img class="w-75 mx-auto mb-5" src="<%= image(@conn, "club.png") %>">
-    <p class="text-center w-75 mx-auto">Clubs give students a more intimate community to code with, bringing together schools. They meet more often than events and so have a more informal atmosphere.</p>
+    <img class="w-100 mx-auto mb-7" src="<%= image(@conn, "clubs.svg") %>"> <img class="w-75 mx-auto mb-5" src="<%= image(@conn, "club.png") %>"> <p class="text-center w-75 mx-auto">Clubs give students a more intimate community to code with, bringing together schools. They meet more often than events and so have a more informal atmosphere.</p>
     <div class="font-chicago">
       <p class="h3 text-blue text-center mt-6 mb-5">ALSO OUR</p>
       <div class="d-flex w-100 justify-content-around mb-6">
@@ -92,9 +99,10 @@
         <button class="button-formal"><a href="mailto:hello@chicode.org">get in touch</a></button>
       </div>
       <div>
+        <%= get_flash(@conn, :info) %>
         <%= form_for @conn, subscribe_path(@conn, :new), [class: "footer__interest"], fn f -> %>
           <%= text_input f, :for, placeholder: "joe@joe.party", class: "input" %>
-          <%= hidden_input f, :location, value: "footer" %>
+          <%= hidden_input f, :location, value: "footer__interest" %>
           <%= submit "stay updated!", class: "submit" %>
         <% end %>
         <p class="small text-weight-bold font-chicago">no spam. ever.</p>

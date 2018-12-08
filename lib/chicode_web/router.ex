@@ -13,6 +13,6 @@ defmodule ChicodeWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/", SubscribeController, :new
+    post "/subscribe", SubscribeController, :new
   end
 end
