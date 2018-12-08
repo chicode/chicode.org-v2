@@ -10,7 +10,7 @@ defmodule Chicode.Subscriber do
     timestamps()
   end
 
-  def create_changeset(user, attrs) do
+  def create_changeset(user \\ %Chicode.Subscriber{}, attrs \\ %{}) do
     user
     |> cast(attrs, [:email, :location])
     |> validate_required([:email, :location])

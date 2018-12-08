@@ -45,6 +45,7 @@ defmodule ChicodeWeb do
       import Phoenix.HTML
       import Phoenix.HTML.Form
       import Phoenix.HTML.Tag
+      import ChicodeWeb.ErrorHelpers
 
       defp image(conn, source) do
         static_path(conn, "/images/" <> source)

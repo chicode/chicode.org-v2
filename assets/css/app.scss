@@ -238,25 +238,34 @@ section {
 }
 
 .events__interest, .footer__interest {
-  @extend .button-formal;
+  font-family: Chicago;
 
-  max-width: 400px;
-  display: flex;
-
-  // fix for element sticking out on firefox
-  justify-content: space-around;
-  box-sizing: content-box;
-
-  .input {
-    flex: 1;
-    color: black;
+  .error {
+    color: map_get($colors, "red");
+    font-size: $font-size-sm;
   }
-  .submit {
-    color: map_get($colors, "purple");
+
+  .form {
+    @extend .button-formal;
+
+    max-width: 400px;
+    display: flex;
+
+    // fix for element sticking out on firefox
+    justify-content: space-around;
+    box-sizing: content-box;
+
+    .input {
+      flex: 1;
+      color: black;
+    }
+    .submit {
+      color: map_get($colors, "purple");
+    }
   }
 }
 
-.footer__interest {
+.footer__interest .form {
   max-width: unset;
 }
 

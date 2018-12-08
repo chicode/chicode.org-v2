@@ -2,6 +2,16 @@ defmodule ChicodeWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
+  use Phoenix.HTML
+
+  @doc """
+  Generates tag for inlined form input errors.
+  """
+  def error_tag(form, field, attrs \\ []) do
+    if error = form.errors[field] do
+      content_tag(:span, translate_error(error), attrs)
+    end
+  end
 
   @doc """
   Translates an error message using gettext.
@@ -24,12 +34,6 @@ defmodule ChicodeWeb.ErrorHelpers do
     # Note we use the "errors" domain, which means translations
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
-
-
-
-
-
-
 
     if count = opts[:count] do
       Gettext.dngettext(ChicodeWeb.Gettext, "errors", msg, msg, count, opts)

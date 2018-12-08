@@ -12,7 +12,7 @@ defmodule ChicodeWeb.SubscribeController do
       {:ok, _video} ->
         put_flash(conn, :info, "nice!")
 
-      {:error, _changeset} ->
+      {:error, changeset} ->
         put_flash(conn, :info, "improper email")
     end
     |> put_flash(:location, params["location"])
