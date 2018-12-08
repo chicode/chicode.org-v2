@@ -9,8 +9,8 @@
     <img class="mx-auto" src="<%= image(@conn, "codeathon.png") %>">
     <h2 class="text-shadow-dark text-grey h2-section mt-m-5">CODEATHON</h2>
     <p class="text-center w-75 mx-auto">Nothing brings students together like working on the same project. That’s why we make codeathons as social and creative as possible - code is just one part of what’s practiced, along with art, music, design, and so on. And if someone’s a beginner, then no problem! Our workshops and mentors gladly help them along the way.</p>
-    <div class="row mt-7">
-      <div class="col-lg font-chicago">
+    <div class="row align-items-center mt-7 font-chicago">
+      <div class="col-lg">
         <h3 class="text-shadow-dark text-red-light mb-5">Upcoming Events</h3>
         <ul>
         <%= for event <- @events do
@@ -23,30 +23,33 @@
       </div>
       <div class="col-lg">
         <p>Keep me updated</p>
-        <%= form_for @conn, subscribe_path(@conn, :new), fn f -> %>
-          <%= text_input f, :for, placeholder: "joe@joe.party" %>
+        <%= form_for @conn, subscribe_path(@conn, :new), [class: "events__interest"], fn f -> %>
+          <%= text_input f, :for, placeholder: "joe@joe.party", class: "input" %>
           <%= hidden_input f, :ocation, value: "events" %>
-          <%= submit "done" %>
+          <%= submit "done", class: "submit" %>
         <% end %>
       </div>
     </div>
   </section>
 
   <section>
-    <img src="<%= image(@conn, "clubs.svg") %>">
-    <img src="<%= image(@conn, "club.png") %>">
-    <p>Clubs give students a more intimate community to code with, bringing together schools. They meet more often than events and so have a more informal atmosphere.</p>
-    <p>ALSO OUR</p>
-    <div class="d-flex">
-      <img src="<%= image(@conn, "arrow-right.svg") %>">
-      <a href="CLUB BOOSTER PACK"></a>
-      <img src="<%= image(@conn, "arrow-left.svg") %>">
-    </div>
-    <p>provides everything you need to start a club</p>
-    <div class="d-flex">
-      <p>promotional materials</p>
-      <p>teaching resources</p>
-      <p>your very own website</p>
+    <img class="w-100 mx-auto mb-6" src="<%= image(@conn, "clubs.svg") %>">
+    <img class="w-75 mx-auto mb-5" src="<%= image(@conn, "club.png") %>">
+    <p class="text-center w-75 mx-auto">Clubs give students a more intimate community to code with, bringing together schools. They meet more often than events and so have a more informal atmosphere.</p>
+    <div class="font-chicago">
+      <p class="h3 text-blue text-center mt-5 mb-5">ALSO OUR</p>
+      <div class="d-flex w-100 justify-content-around mb-6">
+        <img src="<%= image(@conn, "arrow-right.svg") %>">
+        <a class="clubs__pack" href="">CLUB BOOSTER PACK</a>
+        <img src="<%= image(@conn, "arrow-left.svg") %>">
+      </div>
+      <p class="h5 text-center mb-5">provides everything you need to start a club</p>
+      <div class="clubs__vine">
+        <div class="stem"></div>
+        <div class="cherry side"><p>promotional materials</p></div>
+        <div class="cherry middle"><p>teaching resources</p></div>
+        <div class="cherry side"><p>your very own website</p></div>
+      </div>
     </div>
   </section>
 </div>
