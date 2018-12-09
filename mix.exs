@@ -4,7 +4,7 @@ defmodule Chicode.MixProject do
   def project do
     [
       app: :chicode,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -48,7 +48,7 @@ defmodule Chicode.MixProject do
       {:guardian, "~> 1.1.1"},
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
       {:edeliver, ">= 1.6.0"},
-      {:distillery, "~> 2.0", warn_missing: false}
+      {:distillery, "~> 2.0"}
     ]
   end
 

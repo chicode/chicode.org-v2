@@ -48,7 +48,7 @@ defmodule ChicodeWeb do
       import ChicodeWeb.ErrorHelpers
 
       defp image(conn, source) do
-        static_path(conn, "/images/" <> source)
+        static_path(conn, "/images/chicode/" <> source)
       end
     end
   end

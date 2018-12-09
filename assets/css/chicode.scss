@@ -1,0 +1,123 @@
+@import './app.scss';
+
+.h2-section {
+  font-family: Chicago;
+  text-align: center;
+  font-size: 10rem;
+}
+
+.cw__button {
+  background: black;
+  padding: 1rem 1rem;
+  font-family: Chicago;
+  box-shadow: 10px 10px white;
+  margin: 4rem auto;
+
+  > * {
+    color: white;
+    font-size: $h3-font-size;
+  }
+}
+
+.root__circle {
+  width: 700px;
+  height: 700px;
+  margin-left: 5%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 100%;
+  background: map_get($colors, "purple-light");
+}
+
+.button-formal {
+  border: 2px solid map_get($colors, "purple");
+  border-radius: 5px;
+  color: map_get($colors, "purple");
+  font-family: Chicago;
+  padding: 5px 10px;
+}
+
+.events__interest, .footer__interest {
+  font-family: Chicago;
+
+  .error {
+    color: map_get($colors, "red");
+    font-size: $font-size-sm;
+  }
+
+  .form {
+    @extend .button-formal;
+
+    max-width: 400px;
+    display: flex;
+
+    // fix for element sticking out on firefox
+    justify-content: space-around;
+    box-sizing: content-box;
+
+    .input {
+      flex: 1;
+      color: black;
+    }
+    .submit {
+      color: map_get($colors, "purple");
+    }
+  }
+}
+
+.footer__interest .form {
+  max-width: unset;
+}
+
+.clubs__pack {
+  font-family: Chicago;
+  background: map_get($colors, "pink");
+  width: 300px;
+  box-shadow: 0 15px black;
+  color: black;
+  font-size: $h4-font-size;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.clubs__vine {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .stem {
+    @extend .stretch;
+    height: 20px;
+    background: map_get($colors, "blue");
+    position: absolute;
+    margin-top: 100px;
+  }
+
+  .cherry {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    position: relative;
+    text-align: center;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: map_get($colors, "pink");
+      border-radius: 100%;
+      text-align: center;
+    }
+    p {
+      align-self: center;
+      z-index: 3;
+    }
+    &.side {
+      z-index: 2;
+    }
+    &.middle {
+      z-index: -1;
+      margin-top: 70px;
+    }
+  }
+}
