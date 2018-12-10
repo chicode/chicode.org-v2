@@ -15,7 +15,7 @@ config :chicode, ChicodeWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "LBJhFaBKk5QZf38cgvdEIRvBIHNxkVO5HP+RF4HFkhXJ7J839mQ/huGtEubJxikl",
   render_errors: [view: ChicodeWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Chicode.PubSub, adapter: Phoenix.PubSub.PG2],
+  pubsub: [name: Chicode.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

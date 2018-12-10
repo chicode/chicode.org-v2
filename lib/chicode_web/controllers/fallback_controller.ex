@@ -7,8 +7,7 @@ defmodule ChicodeWeb.FallbackController do
   use ChicodeWeb, :controller
 
   def call(conn, {:error, %Ecto.Changeset{} = changeset}) do
-    errors =
-      Ecto.Changeset.traverse_errors(changeset, &ChicodeWeb.ErrorHelpers.translate_error/1)
+    errors = Ecto.Changeset.traverse_errors(changeset, &ChicodeWeb.ErrorHelpers.translate_error/1)
 
     send_json(conn, :unprocessable_entity, %{errors: errors})
   end

@@ -40,15 +40,28 @@ defmodule ChicodeWeb do
 
       import ChicodeWeb.Gettext
       import ChicodeWeb.Router
-      import ChicodeWeb.Router.Helpers
       alias ChicodeWeb.Router.Helpers, as: Routes
       import Phoenix.HTML
       import Phoenix.HTML.Form
       import Phoenix.HTML.Tag
       import ChicodeWeb.ErrorHelpers
 
-      defp image(conn, source) do
-        static_path(conn, "/images/chicode/" <> source)
+      defp webpack_path(conn, filetype) do
+        Routes.static_path(
+          conn,
+          "/" <> Path.join(filetype, conn.assigns.site <> "." <> filetype)
+        )
+      end
+
+      defp static_path(conn, root, file) do
+        Routes.static_path(
+          conn,
+          "/" <> Path.join([root, conn.assigns.site, file])
+        )
+      end
+
+      defp image(conn, image) do
+        static_path(conn, "images", image)
       end
     end
   end

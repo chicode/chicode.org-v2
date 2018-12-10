@@ -40,5 +40,28 @@ defmodule ChicodeWeb.Endpoint do
     key: "_chicode_key",
     signing_salt: "t7L2Q0Jt"
 
+  @dev_host "challenge.chicode.org"
+
+  # set development host to @dev_host
+  def dev_host(conn, _) do
+    Map.put(conn, :host, if(Mix.env() == :dev, do: @dev_host, else: conn.host))
+  end
+
+  plug :dev_host
+
+  def put_site(conn, _) do
+    assign(
+      conn,
+      :site,
+      case conn.host do
+        "chicode.org" -> "chicode"
+        "challenge.chicode.org" -> "challenge"
+        "jonesjam.org" -> "jonesjam"
+      end
+    )
+  end
+
+  plug :put_site
+
   plug ChicodeWeb.Router
 end

@@ -31,7 +31,7 @@
       </div>
       <div class="col-lg">
         <p>Keep me updated</p>
-        <%= form_for @changeset1, page_path(@conn, :new_subscriber), [class: "events__interest"], fn f -> %>
+        <%= form_for @changeset1, Routes.page_path(@conn, :new_subscriber), [class: "events__interest"], fn f -> %>
 	  <div class="form">
 		  <%= text_input f, :email, placeholder: "joe@joe.party", class: "input" %>
 		  <%= hidden_input f, :location, value: "events__interest" %>
@@ -107,7 +107,7 @@
         <button class="button-formal"><a href="mailto:hello@chicode.org">get in touch</a></button>
       </div>
       <div>
-        <%= form_for @changeset2, page_path(@conn, :new_subscriber), [class: "footer__interest"], fn f -> %>
+        <%= form_for @changeset2, Routes.page_path(@conn, :new_subscriber), [class: "footer__interest"], fn f -> %>
           <div class="form">
             <%= text_input f, :email, placeholder: "joe@joe.party", class: "input" %>
             <%= hidden_input f, :location, value: "footer__interest" %>

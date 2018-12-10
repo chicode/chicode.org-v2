@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>chicode</title>
-  <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chicode.css") %>">
+  <link rel="stylesheet" href="<%= webpack_path(@conn, "css") %>">
 </head>
 <body>
   <%= render @view_module, @view_template, assigns %>
   <% IO.inspect @conn %>
-  <script src="<%= Routes.static_path(@conn, "/js/chicode.js") %>"></script>
+  <script src="<%= webpack_path(@conn, "js") %>"></script>
 </body>
 </html>
