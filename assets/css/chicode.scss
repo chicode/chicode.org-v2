@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Karla|Muli');
+@import './fonts/chicago.css';
+@import './fonts/hermit.css';
+
+$font-family-base: Karla;
+
+$colors: (
+  "red-light": #FF98AB,
+  "purple-light": #E7EAFF,
+  "red": #FF5959,
+  "green": #59FF91,
+  "purple": #717EF0,
+  "blue": #3705FF,
+  "orange": #FF9B3F,
+  "grey": #E9E9E9,
+  "purple-dark": #4341CA,
+  "yellow-dark": #CA8B41,
+  "pink": #FF4B6C,
+  "black": black,
+);
+
+$text-muted: hsl(0, 0, 70%);
+$headings-line-height: 1.6;
+
+$font-size-base: 1.5rem;
+
+$h3-font-size: 4rem;
+$h2-font-size: 6rem;
+$h1-font-size: 7rem;
+
 @import './app.scss';
 
 .h2-section {

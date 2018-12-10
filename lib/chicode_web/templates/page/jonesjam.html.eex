@@ -1,1 +1,4 @@
-<h1>Jone Jam!</h1>
+<img class="mx-auto mt-10" style="width: 400px;" src="<%= image(@conn, "logo.svg")%>">
+<h1>Jones Jam</h1>
+<h2 class="text-red">coming soon...</h2>
+
