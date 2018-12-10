@@ -1,10 +1,10 @@
-defmodule ChicodeWeb.PageController do
+defmodule ChicodeWeb.Chicode.PageController do
   use ChicodeWeb, :controller
 
   alias Chicode.{Subscriber, Repo}
 
   def index(conn, _params) do
-    render(conn, conn.assigns.site <> ".html",
+    render(conn, "index.html",
       events: events(),
       changeset1: Subscriber.create_changeset(),
       changeset2: Subscriber.create_changeset()

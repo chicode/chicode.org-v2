@@ -40,7 +40,7 @@ defmodule ChicodeWeb.Endpoint do
     key: "_chicode_key",
     signing_salt: "t7L2Q0Jt"
 
-  @dev_host "jonesjam.org"
+  @dev_host "challenge.chicode.org"
 
   # set development host to @dev_host
   def dev_host(conn, _) do
