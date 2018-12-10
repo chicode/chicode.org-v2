@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :chicode, ChicodeWeb.Endpoint,
   http: [port: 4000],
-  url: [host: "chicode.org", port: 80],
+  url: [host: "chicode.org", port: 443, scheme: "https"],
   cache_static_manifest: "priv/static/manifest.json",
   server: true,
   code_reloader: false
