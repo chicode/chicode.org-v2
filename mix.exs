@@ -20,7 +20,7 @@ defmodule Chicode.MixProject do
   def application do
     [
       mod: {Chicode.Application, []},
-      extra_applications: [:logger, :runtime_tools, :edeliver, :ssl]
+      extra_applications: [:logger, :runtime_tools, :edeliver]
     ]
   end
 

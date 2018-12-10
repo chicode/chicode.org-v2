@@ -12,9 +12,7 @@ use Mix.Config
 config :chicode, ChicodeWeb.Endpoint,
   http: [port: 4000],
   url: [host: "chicode.org", port: 443, scheme: "https"],
-  cache_static_manifest: "priv/static/manifest.json",
-  server: true,
-  code_reloader: false
+  cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
 config :logger, level: :info
