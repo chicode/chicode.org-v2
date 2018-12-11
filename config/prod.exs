@@ -67,7 +67,7 @@ config :logger, level: :info
 # See the releases documentation accordingly.
 
 # Environment
-config :chicode, :env, :dev
+config :chicode, :env, :prod
 
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
