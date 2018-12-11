@@ -73,3 +73,6 @@ config :chicode, Chicode.Repo,
   database: "chicode_dev",
   hostname: "localhost",
   pool_size: 10
+
+# Environment
+config :chicode, :env, :dev
