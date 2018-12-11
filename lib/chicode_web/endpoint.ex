@@ -44,6 +44,7 @@ defmodule ChicodeWeb.Endpoint do
 
   # set development host to @dev_host
   def dev_host(conn, _) do
+    IO.inspect(Mix.env())
     Map.put(conn, :host, if(Mix.env() == :dev, do: @dev_host, else: conn.host))
   end
 

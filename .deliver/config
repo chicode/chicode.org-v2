@@ -1,4 +1,5 @@
 APP="chicode"
+AUTO_VERSION=revision
 
 BUILD_HOST="chicode"
 BUILD_USER="ubuntu"

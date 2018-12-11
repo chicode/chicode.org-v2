@@ -10,7 +10,6 @@
 </head>
 <body>
   <%= render @view_module, @view_template, assigns %>
-  <% IO.inspect @conn %>
   <script src="<%= webpack_path(@conn, "js") %>"></script>
 </body>
 </html>
