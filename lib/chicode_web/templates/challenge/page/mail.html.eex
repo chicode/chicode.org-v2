@@ -7,27 +7,39 @@
 </head>
 <body>
     <div class="container">
-      <div class="header"> <h1>BOX@CHICODE.NET</h1> </div>
+      <div class="header"> <h1>HACKERMAN@CHICODE.NET</h1> </div>
 
       <div class="sidebar" id="sidebar">
         <h2>INBOX</h2>
-        <div class="mailpreview">
-          <h3>Pizza?</h3>
-          <h4>Liam Box</h4>
-          <p>Hey you want to get some pizza?</p>
         </div>
-        </div>
-      <div class="email">
-        <h2> ASdfgERWQFASFKASFGJEWKFJSADFASDFASE</h2>
-        <p> AJSKDFEJRHFGNLAXD VLASJGJL RJGLERGJE GELRJK GLEJLADSFGLAERGASFG ASDFG ASDF ASDF QWEF LJKQSLA GSAS FGJL ASDGALKSDG ASDKLG ASDKFL SAKLDF SD FKLAERFRJALJRG LG JARJG J GJRA LGJEDRGR G   J      KGEL GAJEJL GJ A  AJ EGJL AJ E</p>
-        <p> AJSKDFEJRHFGNLAXD VLASJGJL RJGLERGJE GELRJK GLEJLADSFGLAERGASFG ASDFG ASDF ASDF QWEF LJKQSLA GSAS FGJL ASDGALKSDG ASDKLG ASDKFL SAKLDF SD FKLAERFRJALJRG LG JARJG J GJRA LGJEDRGR G   J      KGEL GAJEJL GJ A  AJ EGJL AJ E</p>
-        <p> AJSKDFEJRHFGNLAXD VLASJGJL RJGLERGJE GELRJK GLEJLADSFGLAERGASFG ASDFG ASDF ASDF QWEF LJKQSLA GSAS FGJL ASDGALKSDG ASDKLG ASDKFL SAKLDF SD FKLAERFRJALJRG LG JARJG J GJRA LGJEDRGR G   J      KGEL GAJEJL GJ A  AJ EGJL AJ E</p>
-        <p> AJSKDFEJRHFGNLAXD VLASJGJL RJGLERGJE GELRJK GLEJLADSFGLAERGASFG ASDFG ASDF ASDF QWEF LJKQSLA GSAS FGJL ASDGALKSDG ASDKLG ASDKFL SAKLDF SD FKLAERFRJALJRG LG JARJG J GJRA LGJEDRGR G   J      KGEL GAJEJL GJ A  AJ EGJL AJ E</p>
-        <p> AJSKDFEJRHFGNLAXD VLASJGJL RJGLERGJE GELRJK GLEJLADSFGLAERGASFG ASDFG ASDF ASDF QWEF LJKQSLA GSAS FGJL ASDGALKSDG ASDKLG ASDKFL SAKLDF SD FKLAERFRJALJRG LG JARJG J GJRA LGJEDRGR G   J      KGEL GAJEJL GJ A  AJ EGJL AJ E</p>
+      <div id="email" class="email">
       </div>
 
     </div>
     <style>
+#verifyinput {
+  position: fixed;
+  margin 0 auto;
+  left: 45%;
+  top: 45%;
+    color: green;
+  padding: 25px;
+    font-size: 22pt;
+  border: 2px solid green;
+}
+
+    #verifyinput > input {
+      background-color: black;
+        color: green;
+        border: 2px solid green;
+    }
+
+    #verifyinput > button {
+      background-color: green;
+        color: black;
+          font-size: 18pt;
+      border: none; 
+    }
     .container {
       overflow: hidden;
       background-color: black;
@@ -44,6 +56,7 @@
       margin: 0;
       padding: 0;
     }
+    
     .sidebar {
       padding: 10px;
       grid-area: sidebar;
@@ -59,21 +72,38 @@
 
     .mailpreview > h4 {
       line-height: 0;
+        font-size: 18pt;
     }
-
+    .mailpreview > h3 {
+      font-size: 22pt;
+    }
+    .mailpreview > p {
+      font-size: 16pt;
+    
+    }
     .sidebar > .mailpreview {
       border-top: 2px solid green;
 
     }
-
+    .hoverhighlight {
+      font-size: 16pt;
+    }
+    .hoverhighlight:hover {
+      background-color: #222222
+    }
     .email {
-      padding: 10px;
+      padding: 40px;
       grid-area: email;
       width: 98%;
       height: 100%;
       border: 2px solid green;
     }
-
+    .email > h1 {
+      font-size: 38pt;
+    }
+    .email > p {
+      font-size: 22pt;
+    }
     .header {
       text-align: center;
       grid-area: header;
@@ -100,20 +130,22 @@
 
     </style>
     <script>
+    let emailsJson;
     fetch('./emails.json')
     .then((response) => {
       return response.json()
     })
     .then((emails) => {
+      emailsJson = emails
       console.log(emails)
-
+       
       emails.emails.map((email, index) => {
         console.log(email)
-        let emailhtml = `
+        let emailhtml = `     
           <div class="mailpreview" onclick="setEmail(${index})">
           <h3>${email.subject}</h3>
           <h4>${email.sender}</h4>
-          <p>${email.subject}</p>
+          <p>${(email.email).substring(0,60)+" (...)"}</p>
         </div>
         `
         console.log(emailhtml)
@@ -122,7 +154,40 @@
     })
 
     function setEmail(email) {
+      let emailhtml = ` 
+        <h1>${emailsJson.emails[email].subject}</h1>
+        <p>${emailsJson.emails[email].email}</p>
+      `
 
+
+      document.getElementById("email").innerHTML = emailhtml;
+
+    }
+    function verifyPassword() {
+        let verifyinput = `
+      <div id="verifyinput"> 
+        Input Text
+        <br>
+        <input id="inputpwd"/>
+        <br>
+        <button onclick="submitVerify()">Submit</button> <button onclick="cancelVerify()">Cancel</button>
+      </div>
+      `
+
+      document.querySelector('body').innerHTML = document.querySelector('body').innerHTML + verifyinput
+    } 
+function submitVerify() {
+  if((document.getElementById('inputpwd').value === "4913289") || (document.getElementById('inputpwd').value === "$4913289" ))
+  {
+    window.location.href = './location';
+    document.getElementById("verifyinput").remove()
+  }
+  else {
+    document.getElementById('verifyinput').style.backgroundColor = "red";
+  }
+}
+    function cancelVerify() {
+      document.getElementById("verifyinput").remove();  
     }
     </script>
 </body>

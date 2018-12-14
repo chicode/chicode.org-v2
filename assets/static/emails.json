@@ -1,0 +1,65 @@
+{"emails": [
+  {
+    "sender": "Michael Boxz",
+    "time": "Fri, 2 Nov 2018 09:34:44 -0500",
+    "subject": "Operation Eagle’s Nest",
+    "email": "Hey, where are we going to take THE EAGLE?"
+  },
+  
+  {
+    "sender": "Anton Boxman",
+    "time": "Fri, 2 Nov 2018 17:34:51 -0500",
+    "subject": "RE: Operation Eagle’s Nest",
+    "email": "I attached an encrypted file to this email. The password is our account balance (too low lmao). <br> <div class='hoverhighlight' style='display:inline-block; border: 3px solid green; padding: 30px;' onclick='verifyPassword()'> location.txt </div>"
+  },
+
+  {
+    "sender": "Anton Boxman",
+    "time": "Thur, 1 Nov 2018 09:34:44 -0500",
+    "subject": "Set Up for the Plan",
+    "email": "I placed $4913289 in the account. Use it however you want."
+  },
+
+  {
+    "sender": "Michael Boxz",
+    "time": "Fri, 3 Nov 2018 8:51:34 -0500",
+    "subject": "RE: Set Up for the Plan",
+    "email": "Excellent. I’m going to spend $289 tonight to buy… materials."
+  },
+
+ {
+    "sender": "Anton Boxman",
+    "time": "Thur, 1 Nov 2018 09:34:51 -0500",
+    "subject": "I need you. Now.",
+    "email": "Did you do the math homework?"
+  },
+  
+  {
+    "sender": "Christian Boxes",
+    "time": "Thur, 1 Nov 2018 09:51:51 -0500",
+    "subject": "RE: I need you. Now.",
+    "email": "There was math homework? Lol you’re on your own."
+  },
+
+  {
+    "sender": "Anton Boxman",
+    "time": "Tue, 11 Dec 2018 07:34:51 -0500",
+    "subject": "ayyushi please",
+    "email": "I’ve found a guy who sells it, but he only takes Jonesbucks! (He said something about them not being traceable.) Can you transfer me some?"
+  },
+
+  {
+    "sender": "Aayushi Nabox",
+    "time": "Thu, 11 Dec 2018 17:51:68 -0500",
+    "subject": "RE: aayushi please",
+    "email": "Fine, but only if you agree to the following terms: \n *On Feburary 2, 2019--no sooner and no later--you are to pay me in United States dollars for Jonesbucks. \n *If the USD to Jonesbuck rate causes my Jonesbucks to drop in value compared to the US dollar on Feburary 2, you will pay me at the Jonesbucks exchange rate as of the time this email is sent. \n *If the USD to Jonesbuck rate causes my Jonesbuck to retain or increase their value compared to the US dollar on Feburary 2, you will pay me back at the Jonesbuck exchange rate as of Feburary 2. \n If you agree, I’ll send you the terms."
+  },
+
+ {
+    "sender": "Anton Boxman",
+    "time": "Tue, 11 Dec 2018 18:34:51 -0500",
+    "subject": "RE: RE: ayyushi please",
+    "email": "Why do you have to make everything so complicated? Fine--but you’re lucky I need these Jonesbucks."
+  }
+]}
+

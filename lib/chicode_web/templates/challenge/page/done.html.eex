@@ -6,12 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 </head>
 <body>
-    <marquee scrolldelay="10" scrollamount="25" id="warning">WARNING TOP SECRET IF YOU NAVIGATED TO THIS PAGE ACCIDENTALLY DESTROY YOUR DEVICE IMMEDIATELY</marquee>
-    <div id="flex-fucker">
-        <input id="username" placeholder="username">
-        <input id="password" placeholder="password">
-        <div id="submit" onclick="submit()">submit</div>
-    </div>
+    <marquee scrolldelay="10" scrollamount="100" id="warning">WELCOME HACKER</marquee>
     <style>
     :root {
         --green: green;
@@ -20,35 +15,28 @@
         background: black;
         font-family: VT323;
     }
-
     body, input {
-        font-size: 10rem;
+        font-size: 5rem;
     }
-
     input {
         border: 3px solid var(--green);
         background: black;
-        width: 900px;
-        height: 100px;
+        width: 600px;
+        height: 50px;
         color: white;
         padding: 20px;
         margin: 10px 0;
     }
-
     #warning {
         color: var(--green);
-        font-size: 15rem;
+        font-size: 10rem;
         margin-top: 10rem;
         margin-bottom: 4rem;
     }
-
     #flex-fucker {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    #submit {
-      background-color:green;
     }
     </style>
     <script>
@@ -57,12 +45,9 @@
         document.querySelector('#warning').style.color = i ? 'red' : 'green'
         i = !i
     }, 100)
-
-    function submit() {
-      if ((document.getElementById('username').value === "hackerman") && (document.getElementById('password').value === "arraysstart@1")) {
-        window.location.href = 'done'
-      }
-    }
+    setTimeout(() => {
+      window.location.href = "mail";
+    }, 2000)
     </script>
 </body>
 </html>

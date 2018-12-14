@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  </head>
+  <body>
+    <h1><u>location.txt</u></h1>
+    
+    <p>The Klaychman package is at [LOCATION]. There is more information at <a href="http://jonesjam.org">jonesjam.org</a></p>
+    <p>We are planning to drop the Klaychman package on February 1st. We are planning an event at [LOCATION] in order to recruit more games-masters to join our cause. Each person or team must prove their worth in intellectual battle against other games-masters. Each one must create a game to join the boxman team.</p>
+    <p>The Klaychman package's purpose will be revealed to the new recruits at [LOCATION] during the event. The package will be transported cybernetically through Chicode's secure transport system.</p>
+  </body>
+
+  <style>
+    body {
+      font-family: VT323;
+        background-color: black;
+          color:green;
+      margin: 0 auto;
+        width: 50vw;
+    }
+    p {
+      font-size: 20pt;
+    }
+    h1 {
+      margin-top: 20%;
+      font-size: 50pt;
+    }
+  </style>
+
+</html>

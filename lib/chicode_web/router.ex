@@ -24,6 +24,9 @@ defmodule ChicodeWeb.Router do
 
     get "/", PageController, :index
     get "/mail", PageController, :mail
+    get "/done", PageController, :done
+    get "/location", PageController, :location
+
   end
 
   scope "/", ChicodeWeb.JonesJam, host: "jonesjam.org" do

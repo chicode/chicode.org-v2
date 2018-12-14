@@ -8,4 +8,12 @@ defmodule ChicodeWeb.Challenge.PageController do
   def mail(conn, _params) do
     render(conn, "mail.html")
   end
+
+  def done(conn, _params) do
+    render(conn, "done.html")
+  end
+
+  def location(conn, _params) do
+    render(conn, "location.html")
+  end
 end
