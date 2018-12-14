@@ -3,10 +3,10 @@ defmodule ChicodeWeb.SessionController do
 
   alias Chicode.Guardian
 
-  action_fallback ChicodeWeb.FallbackController
+  action_fallback ChicodeWeb.ApiFallbackController
 
   def create(conn, %{"session" => %{"username" => username, "password" => password}}) do
-    case ChicodeWeb.Auth.authenticate(username, password) do
+    case ChicodeWeb.AuthHelpers.authenticate(username, password) do
       {:ok, user} ->
         {:ok, jwt, _full_claims} = Guardian.encode_and_sign(user)
 

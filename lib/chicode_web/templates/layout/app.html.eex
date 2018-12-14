@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="<%= webpack_path(@conn, "css") %>">
 </head>
 <body>
-  <%= render @view_module, @view_template, assigns %>
+  <div id="root">
+    <%= render @view_module, @view_template, assigns %>
+  </div>
   <script src="<%= webpack_path(@conn, "js") %>"></script>
 </body>
 </html>

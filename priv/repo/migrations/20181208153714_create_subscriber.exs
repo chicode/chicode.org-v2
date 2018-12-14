@@ -5,6 +5,7 @@ defmodule Chicode.Repo.Migrations.CreateSubscriber do
     create table(:subscribers) do
       add(:email, :string)
       add(:location, :string)
+      add(:type, :string)
 
       timestamps()
     end

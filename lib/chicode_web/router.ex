@@ -10,7 +10,7 @@ defmodule ChicodeWeb.Router do
   end
 
   scope "/", ChicodeWeb do
-    post "/", PageController, :new_subscriber
+    post "/", SubscribeController, :new
   end
 
   scope "/", ChicodeWeb.Chicode, host: "chicode.org" do

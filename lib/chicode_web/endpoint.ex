@@ -12,8 +12,7 @@ defmodule ChicodeWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :chicode,
-    gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    gzip: false
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -40,7 +39,7 @@ defmodule ChicodeWeb.Endpoint do
     key: "_chicode_key",
     signing_salt: "t7L2Q0Jt"
 
-  @dev_host "challenge.chicode.org"
+  @dev_host "chicode.org"
 
   # set development host to @dev_host
   def dev_host(conn, _) do

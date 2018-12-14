@@ -6,6 +6,7 @@ defmodule Chicode.Subscriber do
   schema "subscribers" do
     field :email, :string
     field :location, :string
+    field :type, :string
 
     timestamps()
   end
@@ -16,5 +17,6 @@ defmodule Chicode.Subscriber do
     |> validate_required([:email, :location])
     |> unique_constraint(:email, message: "already subscribed!")
     |> custom_validation(:email, &valid_email?/1, "Invalid email address")
+    |> validate_inclusion(:type, ["chicode", "jonesjam"])
   end
 end

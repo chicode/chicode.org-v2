@@ -23,7 +23,7 @@ defmodule ChicodeWeb do
       import Plug.Conn
       import ChicodeWeb.Gettext
       alias ChicodeWeb.Router.Helpers, as: Routes
-      import ChicodeWeb.Auth, only: [authenticate_user: 2]
+      import ChicodeWeb.AuthHelpers, only: [authenticate_user: 2]
       import ChicodeWeb.Helpers
       alias ChicodeWeb.Helpers.MapExtras
     end
@@ -47,10 +47,17 @@ defmodule ChicodeWeb do
       import ChicodeWeb.ErrorHelpers
 
       defp webpack_path(conn, filetype) do
-        Routes.static_path(
-          conn,
-          "/" <> Path.join(filetype, conn.assigns.site <> "." <> filetype)
-        )
+        if filetype == "js" do
+          Routes.static_path(
+            conn,
+            "/" <> conn.assigns.site <> "." <> filetype
+          )
+        else
+          Routes.static_path(
+            conn,
+            "/" <> Path.join(filetype, conn.assigns.site <> "." <> filetype)
+          )
+        end
       end
 
       defp static_path(conn, root, file) do

@@ -3,7 +3,7 @@ defmodule ChicodeWeb.UserController do
 
   alias Chicode.{User, Repo}
 
-  action_fallback ChicodeWeb.FallbackController
+  action_fallback ChicodeWeb.ApiFallbackController
 
   plug :authenticate_user when action in [:update, :delete]
 

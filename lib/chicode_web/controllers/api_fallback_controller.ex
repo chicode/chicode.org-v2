@@ -1,4 +1,4 @@
-defmodule ChicodeWeb.FallbackController do
+defmodule ChicodeWeb.ApiFallbackController do
   @moduledoc """
   Translates controller action results into valid `Plug.Conn` responses.
 
@@ -18,10 +18,6 @@ defmodule ChicodeWeb.FallbackController do
 
   def call(conn, {:error, error}) do
     send_json(conn, :bad_request, %{error: error})
-  end
-
-  def call(conn, :ok) do
-    send_status(conn, :ok)
   end
 
   def call(conn, {:ok}) do

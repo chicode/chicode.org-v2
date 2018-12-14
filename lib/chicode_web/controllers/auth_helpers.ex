@@ -1,4 +1,4 @@
-defmodule ChicodeWeb.Auth do
+defmodule ChicodeWeb.AuthHelpers do
   import Plug.Conn
   import ChicodeWeb.Helpers
 

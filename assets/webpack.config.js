@@ -14,12 +14,12 @@ module.exports = (_env, _options) => ({
     ],
   },
   entry: {
-    chicode: './js/chicode',
+    chicode: ['@babel/polyfill', './js/chicode/index'],
     jonesjam: './js/jonesjam',
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, '../priv/static/js'),
+    path: path.resolve(__dirname, '../priv/static'),
   },
   module: {
     rules: [
@@ -40,7 +40,7 @@ module.exports = (_env, _options) => ({
           loader: 'file-loader',
           options: {
             // hacky fix to account for the fact that the output is relative to the js directory (because that's the output path)
-            outputPath: '../',
+            outputPath: './',
             publicPath: '/',
             name: '[path][name].[ext]',
           },
@@ -49,7 +49,12 @@ module.exports = (_env, _options) => ({
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: '../css/[name].css' }),
-    new CopyWebpackPlugin([{ from: 'static/', to: '../' }]),
+    new MiniCssExtractPlugin({ filename: './css/[name].css' }),
+    new CopyWebpackPlugin([{ from: 'static/', to: './' }]),
   ],
+  resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.esm.js',
+    },
+  },
 })

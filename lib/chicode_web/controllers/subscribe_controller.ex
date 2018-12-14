@@ -3,19 +3,11 @@ defmodule ChicodeWeb.SubscribeController do
 
   alias Chicode.{Subscriber, Repo}
 
-  plug :put_view, ChicodeWeb.PageView
+  action_fallback ChicodeWeb.ApiFallbackController
 
   def new(conn, params) do
     changeset = Subscriber.create_changeset(%Subscriber{}, params)
 
-    case Repo.insert(changeset) do
-      {:ok, _video} ->
-        put_flash(conn, :info, "nice!")
-
-      {:error, changeset} ->
-        put_flash(conn, :info, "improper email")
-    end
-    |> put_flash(:location, params["location"])
-    |> redirect(to: "/")
+    IO.inspect(Repo.insert(changeset))
   end
 end
