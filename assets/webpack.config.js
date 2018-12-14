@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = (_env, _options) => ({
   mode: process.env.NODE_ENV,
@@ -31,6 +32,10 @@ module.exports = (_env, _options) => ({
         },
       },
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
@@ -51,10 +56,6 @@ module.exports = (_env, _options) => ({
   plugins: [
     new MiniCssExtractPlugin({ filename: './css/[name].css' }),
     new CopyWebpackPlugin([{ from: 'static/', to: './' }]),
+    new VueLoaderPlugin(),
   ],
-  resolve: {
-    alias: {
-      vue$: 'vue/dist/vue.esm.js',
-    },
-  },
 })

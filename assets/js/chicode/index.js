@@ -4,8 +4,6 @@ import Vue from 'vue'
 
 import route from 'riot-route'
 
-route('/', () =>
-  import(/* webpackChunkName: "home" */ './home.js').then(() => new Vue({ el: '#root' })),
-)
+route('/', () => import(/* webpackChunkName: "home" */ './home.js'))
 
 route.start(true)

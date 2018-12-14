@@ -1,4 +1,6 @@
 <img class="mx-auto" style="width: 400px; margin-top: calc(50vh - 250px)" src="<%= image(@conn, "logo.svg")%>">
 <h1>Jones Jam</h1>
-<h2 class="text-red">coming soon...</h2>
+<h2 class="text-red">February 1</h2>
 
+<script type="text/x-template" id="subscriber-form-template">
+</script>

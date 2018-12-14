@@ -48,7 +48,7 @@ defmodule Chicode.MixProject do
       {:guardian, "~> 1.1.1"},
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
       {:edeliver, ">= 1.6.0"},
-      {:distillery, "~> 2.0"}
+      {:distillery, "~> 2.0"},
     ]
   end
 
