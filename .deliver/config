@@ -1,7 +1,7 @@
 APP="chicode"
 AUTO_VERSION=revision
 
-BUILD_HOST="chicode"
+BUILD_HOST="18.188.3.69"
 BUILD_USER="ubuntu"
 BUILD_AT="/tmp/edeliver/$APP/builds"
 
@@ -11,7 +11,7 @@ CLEAN_DEPLOY=true
 # prevent re-installing node modules; this defaults to "."
 GIT_CLEAN_PATHS="_build rel priv/static"
 
-STAGING_HOSTS="chicode"
+STAGING_HOSTS="18.188.3.69"
 STAGING_USER="ubuntu"
 DELIVER_TO="/home/web"
 
