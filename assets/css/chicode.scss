@@ -68,27 +68,8 @@ $h1-font-size: 7rem;
 }
 
 .subscriber-form {
-  font-family: Chicago;
-
-  .error {
-    color: map_get($colors, "red");
-    font-size: $font-size-sm;
-  }
-
   .form {
     @extend .button-formal;
-
-    max-width: 400px;
-    display: flex;
-
-    // fix for element sticking out on firefox
-    justify-content: space-around;
-    box-sizing: content-box;
-
-    .input {
-      flex: 1;
-      color: black;
-    }
     .submit {
       color: map_get($colors, "purple");
     }

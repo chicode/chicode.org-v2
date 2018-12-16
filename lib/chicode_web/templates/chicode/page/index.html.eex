@@ -2,7 +2,7 @@
   <div class="subscriber-form">
     <%= form_for @conn, Routes.subscribe_path(@conn, :new), ["@submit": "submit"], fn f -> %>
       <div class="form">
-        <%= text_input f, :email, placeholder: "joe@joe.party", class: "input" %>
+       <%= text_input f, :email, placeholder: "joe@joe.party", class: "input" %>
         <%= hidden_input f, :location, value: "events__interest" %>
         <%= submit "done", class: "submit" %>
       </div>
