@@ -1,10 +1,9 @@
 <template>
 <div class="subscriber-form">
-  <form class="form" action="/" @submit="submit">
-    <input id="email" name="email" placeholder="joe@joe.party" type="text" class="input">
-    <input id="location" name="location" type="hidden" value="events__interest">
-    <button type="submit" class="submit">done</button>
-  </form>
+  <div class="form" @submit="submit">
+    <input name="email" placeholder="joe@joe.party" type="text" class="input" v-model="email">
+    <button class="submit" @click="submit">done</button>
+  </div>
   <p v-if="status === 'ok'" class="small text-green">subscribed.</p>
   <p v-else-if="status === 'error'" class="small text-red">{{ this.error }}</p>
   <p v-else class="small text-weight-bold">no spam. ever.</p>
@@ -14,26 +13,29 @@
 <script>
 import _ from 'lodash'
 
-const formToJson = (form) =>
-  new FormData(form).entries() |> _.toArray |> _.fromPairs |> JSON.stringify
-
 export default {
   name: 'SubscriberForm',
   data: () => ({
     error: '',
     status: '',
+    email: '',
   }),
+  props: {
+    location: {
+      required: true,
+    },
+    type: {
+      require: true,
+    }
+  },
   methods: {
-    async submit(e) {
-      e.preventDefault()
-
-      const resp = await fetch(e.target.action, {
+    async submit() {
+      const resp = await fetch('/', {
         method: 'post',
-        body: formToJson(e.target),
+        body: { email: this.email, location: this.location, type: this.type } |> JSON.stringify,
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'cors',
       })
 
       if (resp.status === 200) {

@@ -13,8 +13,8 @@ defmodule Chicode.Subscriber do
 
   def create_changeset(user \\ %Chicode.Subscriber{}, attrs \\ %{}) do
     user
-    |> cast(attrs, [:email, :location])
-    |> validate_required([:email, :location])
+    |> cast(attrs, [:email, :location, :type])
+    |> validate_required([:email, :location, :type])
     |> unique_constraint(:email, message: "already subscribed!")
     |> custom_validation(:email, &valid_email?/1, "Invalid email address")
     |> validate_inclusion(:type, ["chicode", "jonesjam"])

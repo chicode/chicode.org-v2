@@ -38,7 +38,7 @@
       </div>
       <div class="col-lg">
         <p>Keep me updated</p>
-        <subscriber-form>
+        <subscriber-form location="events" type="chicode">
       </div>
     </div>
   </section>
@@ -100,7 +100,7 @@
       <div class="mr-7">
         <button class="button-formal"><a href="mailto:hello@chicode.org">get in touch</a></button>
       </div>
-      <subscriber-form>
+      <subscriber-form location="footer" type="chicode">
   </section>
 </div>
 
