@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Karla|Muli');
-@import './fonts/chicago.css';
-@import './fonts/hermit.css';
+@import url("https://fonts.googleapis.com/css?family=Karla|Muli");
+@import "./fonts/chicago.css";
+@import "./fonts/hermit.css";
 
-$font-family-base: Karla;
+$font-family-sans-serif: Karla;
 
 $colors: (
   "red-light": #FF98AB,
@@ -28,7 +28,11 @@ $h3-font-size: 4rem;
 $h2-font-size: 6rem;
 $h1-font-size: 7rem;
 
-@import './app.scss';
+@import "../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "./app";
 
 .h2-section {
   font-family: Chicago;

@@ -42,6 +42,7 @@ export default {
         this.status = 'ok'
       } else {
         const { errors } = await resp.json()
+        console.log(errors)
 
         this.error = errors.email[0]
         this.status = 'error'
@@ -52,8 +53,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../css/app.scss";
-
 .subscriber-form {
   font-family: Chicago;
 

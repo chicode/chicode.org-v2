@@ -7,7 +7,11 @@ $colors: (
   "red": #FF0D27,
 );
 
-@import './app.scss';
+@import "../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "./app.scss";
 
 h1, h2, h3, h4, h5 {
   text-align: center;

@@ -45,7 +45,6 @@ module.exports = (_env, _options) => ({
         use: {
           loader: 'file-loader',
           options: {
-            // hacky fix to account for the fact that the output is relative to the js directory (because that's the output path)
             outputPath: './',
             publicPath: '/',
             name: '[path][name].[ext]',
