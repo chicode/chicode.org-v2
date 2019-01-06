@@ -4,8 +4,20 @@
 $headings-font-family: Chicago;
 
 $colors: (
-  "red": #FF0D27,
+  "red": #FF3B50,
+  "yellow": #F3E45C,
+  "purple": #6461FF,
+  "light-red": #FF6172,
+  "light-yellow": #FFDD9B,
+  "light-purple": #C8C7FF,
+  "black": black,
+  "white": white,
 );
+
+$h1-font-size: 6rem;
+$h2-font-size: 3rem;
+$h3-font-size: 3rem;
+$h4-font-size: 1.5rem;
 
 @import "../node_modules/bootstrap/scss/bootstrap-grid";
 @import "../node_modules/bootstrap/scss/bootstrap-reboot";
@@ -13,16 +25,32 @@ $colors: (
 @import "../node_modules/bootstrap/scss/utilities";
 @import "./app.scss";
 
+.family-helvetica {
+  font-family: Helvetica;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+body {
+  font-family: Chicago;
+}
+
+section {
+  margin-top: 4rem;
+}
+
 h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
-h1 {
-  font-size: 6rem;
+p {
+  font-size: 1.5rem;
 }
 
-h2 {
-  font-size: 2.5rem;
+button img {
+  display: inline-block;
 }
 
 .interest-box {
@@ -37,3 +65,41 @@ h2 {
     padding: 5px;
   }
 }
+
+.dark-section {
+  background: black;
+  color: white;
+  padding: 2rem;
+
+  button, input {
+    border: 2px solid white;
+    padding: 0.5rem;
+    color: white;
+  }
+
+  ::placeholder {
+    opacity: 0.7;
+    color: white;
+  }
+}
+
+.character-form {
+  margin: auto;
+  width: 70%;
+
+  .col input {
+    margin: auto;
+  }
+
+  .row {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    margin: auto;
+    img {
+      vertical-align: text-bottom;
+    }
+  }
+}
+

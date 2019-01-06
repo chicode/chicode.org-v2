@@ -34,6 +34,10 @@ $h1-font-size: 7rem;
 @import "../node_modules/bootstrap/scss/utilities";
 @import "./app";
 
+section {
+  margin-bottom: 13rem;
+}
+
 .h2-section {
   font-family: Chicago;
   text-align: center;

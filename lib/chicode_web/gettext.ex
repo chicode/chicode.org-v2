@@ -22,4 +22,3 @@ defmodule ChicodeWeb.Gettext do
   """
   use Gettext, otp_app: :chicode
 end
-
