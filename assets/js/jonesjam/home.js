@@ -1,10 +1,4 @@
 import Vue from 'vue'
-import SubscriberForm from '../components/SubscriberForm.vue'
+import AttendeeForm from '../components/AttendeeForm.vue'
 
-window.onload = () => {
-  document.querySelectorAll('.character-form input').forEach((el) => {
-    el.onchange = (e) => {
-      window.localStorage.setItem(el.name, e.target.value)
-    }
-  })
-}
+new Vue({ el: '#root', components: { AttendeeForm } })

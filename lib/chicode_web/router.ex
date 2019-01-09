@@ -5,17 +5,16 @@ defmodule ChicodeWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
-    plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 
   scope "/", ChicodeWeb do
-    post "/", SubscribeController, :new
   end
 
   scope "/", ChicodeWeb.Chicode, host: "chicode.org" do
     pipe_through :browser
 
+    post "/", SubscribeController, :new
     get "/", PageController, :index
   end
 
@@ -32,6 +31,7 @@ defmodule ChicodeWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    post "/", PageController, :new
     get "/thank-you", PageController, :thank_you
   end
 end

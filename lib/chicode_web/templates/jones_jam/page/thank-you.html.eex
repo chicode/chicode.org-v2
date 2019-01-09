@@ -1,2 +1,11 @@
-<h1>Thank you!</h1>
+<%= if not @valid? do %>
+  <h1>You must be a CPS student to register.</h1>
+<% else %>
+  <%= if @exists? do %>
+    <h1>Already registered!</h1>
+  <% else %>
+    <h1>Thank you!</h1>
+  <% end %>
+<% end %>
 
+<a class="text-center" href="/">home</a>

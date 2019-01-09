@@ -8,6 +8,6 @@ defmodule ChicodeWeb.SubscribeController do
   def new(conn, params) do
     changeset = Subscriber.create_changeset(%Subscriber{}, params)
 
-    IO.inspect(Repo.insert(changeset))
+    Repo.insert(changeset)
   end
 end

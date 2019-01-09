@@ -18,26 +18,7 @@
 <section class="text-center">
   <h3>Interested?</h3>
   <h4>create a character to sign up</h4>
-  <div class="character-form mt-5" action="">
-    <div class="row">
-        <div class="col"><input placeholder="first name" name="firstname"></div>
-        <div class="col"><input placeholder="last name" name="lastname"></div>
-    </div>
-    <div class="row">
-        <div class="col"><input placeholder="gender" name="gender"></div>
-        <div class="col"><input placeholder="ethnicity" name="ethnicity"></div>
-    </div>
-    <div class="row">
-        <div class="col"><input placeholder="school" name="school"></div>
-        <div class="col"><input placeholder="gender" name="gender"></div>
-    </div>
-    <a href="<%= Google.authorize_url! %>">
-      <button class="mt-4">
-        <img src="<%= image(@conn, "google.svg") %>">
-        finish by signing in
-      </button>
-    </a>
-  </div>
+  <attendee-form image="<%= image(@conn, "google.svg") %>" success-location="<%= Google.authorize_url! %>" class="mt-5 character-form">
 </section>
 
 <section>
@@ -52,7 +33,7 @@
     <li><span class="time">8:30</span>opening ceremony</li>
     <li><span class="time">9:00</span>“intro to game dev with python” workshop</li>
     <li><span class="time">1:00</span>lunch</li>
-    <li><span class="time">3:00</span>act out a machine-learning generated play!</li>
+    <li><span class="time">3:00</span>act out a play generated with machine-learning!</li>
     <li><span class="time">6:00</span>dinner</li>
     <li><span class="time">9:00</span>project fair &amp; opening ceremony</li>
   </ul>
