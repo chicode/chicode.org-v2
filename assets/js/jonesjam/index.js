@@ -1,6 +1,9 @@
 import '../../css/jonesjam.scss'
 import 'phoenix_html'
-import Vue from 'vue'
-import SubscriberForm from '../components/SubscriberForm.vue'
 
-new Vue({ el: '#root', components: { SubscriberForm } })
+import route from 'riot-route'
+
+route('/', () => import(/* webpackChunkName: "home" */ './home.js'))
+route('/thank-you', () => import(/* webpackChunkName: "thank-you" */ './thank-you.js'))
+
+route.start(true)

@@ -26,12 +26,12 @@ defmodule ChicodeWeb.Router do
     get "/mail", PageController, :mail
     get "/done", PageController, :done
     get "/location", PageController, :location
-
   end
 
   scope "/", ChicodeWeb.JonesJam, host: "jonesjam.org" do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/thank-you", PageController, :thank_you
   end
 end

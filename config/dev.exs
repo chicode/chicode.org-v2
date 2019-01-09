@@ -76,3 +76,5 @@ config :chicode, Chicode.Repo,
 
 # Environment
 config :chicode, :env, :dev
+
+import_config "oauth2.secret.exs"

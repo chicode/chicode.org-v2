@@ -1,3 +1,5 @@
+<div class="container">
+
 <section style="margin-top: 25vh; margin-bottom: 25vh;">
 <img class="mx-auto" style="width: 400px" src="<%= image(@conn, "logo.svg")%>">
 <h1>Jones Jam</h1>
@@ -7,16 +9,16 @@
 
 <section class="text-center">
   <h3 class="mb-3">what is a “<span class="text-red">game</span>”?</h3>
-  <p class="mb-5 mx-auto w-60">that’s the question we’re asking you at Jones&nbsp;Jam.</p>
-  <img class="mx-auto w-60" src="<%= image(@conn, "game-definition.svg") %>">
-  <p class="mt-5 mx-auto w-60">you’ll have <span class="text-red">12 hours</span> to show us YOUR most creative interpretation, given a specific theme*</p>
+  <p class="mb-5 mx-auto w-75">that’s the question we’re asking you at Jones&nbsp;Jam.</p>
+  <img class="mx-auto w-75" src="<%= image(@conn, "game-definition.svg") %>">
+  <p class="mt-5 mx-auto w-75">you’ll have <span class="text-red">12 hours</span> to show us YOUR most creative interpretation, given a specific theme*</p>
   <p class="small text-right mr-3">*announced the day of the event</p>
 </section>
 
-<section class="text-center dark-section">
+<section class="text-center">
   <h3>Interested?</h3>
   <h4>create a character to sign up</h4>
-  <form class="character-form mt-5">
+  <div class="character-form mt-5" action="">
     <div class="row">
         <div class="col"><input placeholder="first name" name="firstname"></div>
         <div class="col"><input placeholder="last name" name="lastname"></div>
@@ -29,33 +31,44 @@
         <div class="col"><input placeholder="school" name="school"></div>
         <div class="col"><input placeholder="gender" name="gender"></div>
     </div>
-    <button class="mt-4">
-      <img src="<%= image(@conn, "google.svg") %>">
-      finish by signing in
-    </button>
-  <form>
+    <a href="<%= Google.authorize_url! %>">
+      <button class="mt-4">
+        <img src="<%= image(@conn, "google.svg") %>">
+        finish by signing in
+      </button>
+    </a>
+  </div>
 </section>
 
-<section class="text-center">
+<section>
   <!-- TODO install helvetica bold -->
-  <h3 class="family-helvetica">Answers for Humanity</h3>
-  <img class="mx-auto w-75 mt-5" src="<%= image(@conn, "answers-for-humanity.svg") %>">
+  <h3 class="family-helvetica mb-5">Answers for Humanity</h3>
+  <img class="mx-auto w-75 mt-5" src="<%= image(@conn, "cards-for-humanity.svg") %>">
 </section>
 
-<section class="text-center dark-section">
-  <h3>Complete Schedule</h3>
-  <ul class="d-inline-block text-left h4">
-    <li>8:30 - opening ceremony</li>
-    <li>9:00 - “intro to game dev with python” workshop</li>
-    <li>1:00 - lunch</li>
-    <li>3:00 - act out a machine-learning generated play!</li>
-    <li>6:00 - dinner</li>
-    <li>9:00 - project fair &amp; opening ceremony</li>
+<section>
+  <h3 class="mb-5">Complete Schedule</h3>
+  <ul class="schedule">
+    <li><span class="time">8:30</span>opening ceremony</li>
+    <li><span class="time">9:00</span>“intro to game dev with python” workshop</li>
+    <li><span class="time">1:00</span>lunch</li>
+    <li><span class="time">3:00</span>act out a machine-learning generated play!</li>
+    <li><span class="time">6:00</span>dinner</li>
+    <li><span class="time">9:00</span>project fair &amp; opening ceremony</li>
   </ul>
 </section>
 
-<section class="text-center">
-  <h3>NPCs, look here</h3>
+<section>
+  <img class="floating-image right" src="<%= image(@conn, "npc.svg") %>">
+  <h3 class="mb-5">NPCs, look here</h3>
   <h4>If you would like to help us by sponsoring, mentoring, or something else, please reach out to jj@chicode.org.</h4>
 </section>
+</div>
 
+<footer class="mt-7">
+  <img class="mx-auto mb-4" src="<%= image(@conn, "wiggly.svg") %>">
+  <div class="d-flex justify-content-center align-items-center m-3">
+    <a href="https://chicode.org"><img style="height: 2rem;" src="<%= image(@conn, "chicode.svg") %>"></a>
+    <p class="h6 ml-5">we believe in FOSS, so all of our code is available on <a href="https://github.com/chicode/">github</a>. send us a PR!</p>
+  </div>
+</footer>
