@@ -20,7 +20,7 @@ defmodule Chicode.MixProject do
   def application do
     [
       mod: {Chicode.Application, []},
-      extra_applications: [:logger, :runtime_tools, :edeliver]
+      extra_applications: [:logger, :runtime_tools, :oauth2]
     ]
   end
 
@@ -47,8 +47,7 @@ defmodule Chicode.MixProject do
       {:bcrypt_elixir, "~> 1.0"},
       {:guardian, "~> 1.1.1"},
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
-      {:edeliver, ">= 1.6.0"},
-      {:distillery, "~> 2.0"},
+      {:oauth2, "~> 0.9"}
     ]
   end
 
