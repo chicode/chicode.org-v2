@@ -121,6 +121,10 @@ button img {
     margin-bottom: 0;
     margin-top: 0.3rem;
   }
+
+  input {
+    width: 75%; // fix for number input being small
+  }
 }
 
 .floating-image {

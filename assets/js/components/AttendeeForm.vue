@@ -26,7 +26,8 @@
       <p v-if="this.errors.school">{{ this.errors.school[0] }}</p>
     </div>
     <div class="col">
-      <input placeholder="grade" name="grade" v-model="data.grade">
+      <input placeholder="grade" name="grade" v-model="data.grade"
+        type="number" min="6" max="12">
       <p v-if="this.errors.grade">{{ this.errors.grade[0] }}</p>
     </div>
   </div>
