@@ -7,7 +7,7 @@
 
   <%= render @view_module, "meta.html", assigns %>
 
-  <title>chicode</title>
+  <title><%= assigns.site %></title>
   <link rel="stylesheet" href="<%= webpack_path(@conn, "css") %>">
 </head>
 <body>
