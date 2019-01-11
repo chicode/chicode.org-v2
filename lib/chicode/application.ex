@@ -6,6 +6,10 @@ defmodule Chicode.Application do
   use Application
 
   def start(_type, _args) do
+    if Application.get_env(:chicode, :env) == :dev and is_nil(System.get_env("DEV_HOST")) do
+      raise "Dev server must be run with the DEV_HOST environmental variable specifying the desired host."
+    end
+
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository

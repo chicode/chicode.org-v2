@@ -43,14 +43,16 @@ defmodule ChicodeWeb.Endpoint do
     signing_salt: "t7L2Q0Jt"
   )
 
-  @dev_host "jonesjam.org"
-
   # set development host to @dev_host
   def dev_host(conn, _) do
     Map.put(
       conn,
       :host,
-      if(Application.get_env(:chicode, :env) == :dev, do: @dev_host, else: conn.host)
+      if Application.get_env(:chicode, :env) == :dev do
+        System.get_env("DEV_HOST")
+      else
+        conn.host
+      end
     )
   end
 

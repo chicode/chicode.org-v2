@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Karla|Muli");
 @import "./fonts/chicago.css";
 @import "./fonts/hermit.css";
-
+ 
 $font-family-sans-serif: Karla;
 
 $colors: (
@@ -32,6 +32,9 @@ $h1-font-size: 7rem;
 @import "../node_modules/bootstrap/scss/bootstrap-reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/_variables";
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints";
 @import "./app";
 
 section {
@@ -42,6 +45,10 @@ section {
   font-family: Chicago;
   text-align: center;
   font-size: 10rem;
+}
+
+workshops__chris{
+  width: 25%;
 }
 
 .cw__button {
@@ -138,5 +145,159 @@ section {
       z-index: -1;
       margin-top: 70px;
     }
+  }
+
+  .bottom__contact {
+    width: 50%;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  section {
+    margin-bottom: 5rem;
+  }
+
+  .h2-section {
+    font-size: 4rem;
+    margin-top: -3rem;
+  }
+
+  .codeathon__text {
+    font-size: 3rem;
+    margin-top: -3rem;
+  }
+
+  .workshops__chris {
+    width: 50%;
+  }
+
+  .cw__button {
+    font-size:1.5rem;
+  }
+
+  /*should be in app.scss*/
+  .display-1 {
+    font-size: 3.5rem;
+  }
+  
+  p {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .bottom__contact{
+    width: 90%;
+  }
+
+  .mt-7 {
+    margin-top: 3rem;
+  }
+  
+  //too hard to display code on mobile
+  pre {
+    display:none
+  }
+  
+  .subscriber-form {
+    .form {
+      .submit {
+        color: map_get($colors, "purple");
+        font-size: 1rem;
+      }
+    }
+  }
+
+
+  .codeathon-img {
+    width: 100%;
+  }
+
+
+  .cw__button {
+    padding: 1rem 1rem;
+    box-shadow: 10px 10px white;
+    margin: 4rem auto;
+
+    > * {
+      font-size: $h3-font-size;
+    }
+  }
+
+  .root__circle {
+    width: 350px;
+    height: 350px;
+    margin-left: 5%;
+    position: absolute;
+    z-index: -1;
+    border-radius: 100%;
+  }
+
+  .button-formal {
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+
+  .footer__interest .form {
+    max-width: unset;
+  }
+
+  .clubs__pack {
+    width: 150px;
+    box-shadow: 0 15px black;
+    color: black;
+    font-size: $h4-font-size/2;
+    padding: 10px 20px;
+  }
+
+  .clubs__top {
+    font-size: $h3-font-size/2;
+  }
+
+  .clubs__bottom {
+    font-size: $h4-font-size/2;
+  }
+
+  .clubs__vine {
+    width: 100%;
+
+    .stem {
+      height: 10px;
+      margin-top: 90px;
+    }
+
+    .cherry {
+      width: 100px;
+      height: 100px;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: map_get($colors, "pink");
+        border-radius: 100%;
+        text-align: center;
+      }
+      p {
+        font-size: .85rem;
+        align-self: center;
+        z-index: 3;
+      }
+      &.side {
+        z-index: 2;
+      }
+      &.middle {
+        z-index: -1;
+        margin-top: 80px;
+      }
+    }
+  }
+  .pre {
+    display: none;
   }
 }

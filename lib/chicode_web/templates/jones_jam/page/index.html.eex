@@ -18,6 +18,7 @@
 <section class="text-center">
   <h3>Interested?</h3>
   <h4>create a character to sign up</h4>
+  <canvas id="character" width="500px" height="200px"></canvas>
   <attendee-form image="<%= image(@conn, "google.svg") %>" success-location="<%= Google.authorize_url! %>" class="mt-5 character-form">
 </section>
 

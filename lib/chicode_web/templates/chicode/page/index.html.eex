@@ -6,8 +6,8 @@
     <h4 class="font-weight-bold w-75 mx-auto">A series of inclusive communities that offer a new perspective on CS</h4>
   </section>
   <section>
-    <img class="mx-auto" src="<%= image(@conn, "codeathon.png") %>">
-    <h2 class="text-shadow-dark text-grey h2-section mt-m-5">CODEATHON</h2>
+    <img class="mx-auto codeathon-img" src="<%= image(@conn, "codeathon.png") %>">
+    <h2 class="text-shadow-dark codeathon__text text-grey h2-section mt-m-5">CODEATHON</h2>
     <p class="text-center w-75 mx-auto">Nothing brings students together like working on the same project. That’s why we make codeathons as social and creative as possible - code is just one part of what’s practiced, along with art, music, design, and so on. And if someone’s a beginner, then no problem! Our workshops and mentors gladly help them along the way.</p>
     <div class="row align-items-center mt-7 font-chicago">
       <div class="col-lg">
@@ -31,13 +31,13 @@
   <section>
     <img class="w-100 mx-auto mb-7" src="<%= image(@conn, "clubs.svg") %>"> <img class="w-75 mx-auto mb-5" src="<%= image(@conn, "club.png") %>"> <p class="text-center w-75 mx-auto">Clubs give students a more intimate community to code with, bringing together schools. They meet more often than events and so have a more informal atmosphere.</p>
     <div class="font-chicago">
-      <p class="h3 text-blue text-center mt-6 mb-5">ALSO OUR</p>
+      <p class="h3 clubs__top text-blue text-center mt-6 mb-5">ALSO OUR</p>
       <div class="d-flex w-100 justify-content-around mb-6">
         <img src="<%= image(@conn, "arrow-right.svg") %>">
         <a class="clubs__pack" href="">CLUB BOOSTER PACK</a>
         <img src="<%= image(@conn, "arrow-left.svg") %>">
       </div>
-      <p class="h5 text-center mb-5">provides everything you need to start a club</p>
+      <p class="h5 clubs__bottom text-center mb-5">provides everything you need to start a club</p>
       <div class="clubs__vine">
         <div class="stem"></div>
         <div class="cherry side"><p>promotional materials</p></div>
@@ -50,9 +50,9 @@
 
 <section class="bg-orange pb-1">
   <marquee class="font-chicago">and of course our free open-source community-powered beautiful awesome cutting-edge educational platform which will become an entire community in its own right</marquee>
-  <h2 hidden class="h2-section">CODING WORKSHOPS</h2>
-  <img class="mx-auto w-75 mb-7" src="<%= image(@conn, "codingworkshops.svg") %>">
-  <img class="mx-auto w-25 mb-6" src="<%= image(@conn, "chris.svg") %>">
+  <h2 hidden class="h2-section workshops__text">CODING WORKSHOPS</h2>
+  <img class="mx-auto w-75 mb-7 workshops__text" src="<%= image(@conn, "codingworkshops.svg") %>">
+  <img class="mx-auto workshops__chris mb-6" src="<%= image(@conn, "chris.svg") %>">
   <div class="container">
     <div class="w-75 mx-auto bg-black text-white px-4 py-3">
       <p>We believe that having the right teaching tools is just as important as having the right environment. That’s why we created our own educational platform, codingworkshops.</p>
@@ -80,8 +80,8 @@
 
   <section>
     <div class="bg-blue stretch"><h2 class="text-left text-white mb-5 font-chicago mx-auto w-75">We believe that coding is for everyone</h2></div>
-    <p class="w-50">As a group of high school students ourselves, we genuinely believe that coding can be used as a force for good. All of us have used coding to empower ourselves and our communities, and we hope that someday you will too. If you have any questions, or just want to chat, feel free to reach out to us!</p>
-    <div class="d-flex mt-5">
+    <p class="bottom__contact">As a group of high school students ourselves, we genuinely believe that coding can be used as a force for good. All of us have used coding to empower ourselves and our communities, and we hope that someday you will too. If you have any questions, or just want to chat, feel free to reach out to us!</p>
+    <div class="d-flex flex-wrap mt-5">
       <div class="mr-7">
         <button class="button-formal"><a href="mailto:hello@chicode.org">get in touch</a></button>
       </div>
