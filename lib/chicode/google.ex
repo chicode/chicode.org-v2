@@ -12,7 +12,12 @@ defmodule Google do
       site: "https://accounts.google.com",
       authorize_url: "/o/oauth2/auth",
       token_url: "/o/oauth2/token",
-      redirect_uri: "http://localhost:4000/thank-you"
+      redirect_uri:
+        if Application.get_env(:chicode, :env) == :dev do
+          "http://localhost:4000/thank-you"
+        else
+          "https://jonesjam.org/thank-you"
+        end
     ]
   end
 
