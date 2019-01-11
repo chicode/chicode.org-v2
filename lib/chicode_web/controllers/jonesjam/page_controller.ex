@@ -53,4 +53,8 @@ defmodule ChicodeWeb.JonesJam.PageController do
         render(conn, "thank-you.html", valid?: valid?, exists?: exists?)
     end
   end
+
+  def thank_you(conn, _args) do
+    redirect(conn, to: "/")
+  end
 end

@@ -7,13 +7,15 @@
   <link rel="stylesheet" href="<%= webpack_path(@conn, "css") %>">
 </head>
 <body>
-  <%= if @type == 404 do %>
-  <h1>Page not found.</h1>
-  <% else %>
-  <h1>Uh oh, we messed up. Please check back soon.</h1>
-  <% end %>
+  <div class="text-center mt-6">
+    <%= if @type == 404 do %>
+    <h1>Page not found.</h1>
+    <% else %>
+    <h1>Uh oh, we messed up. Please check back soon.</h1>
+    <% end %>
 
-  <a class="d-block text-center" href="/">home</a>
+    <a href="/">home</a>
+  </div>
 </body>
 </html>
 
