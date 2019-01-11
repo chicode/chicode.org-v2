@@ -1,3 +1,4 @@
+<div class="text-center mt-6">
 <%= if not @valid? do %>
   <h1>You must be a CPS student to register.</h1>
 <% else %>
@@ -7,5 +8,5 @@
     <h1>Thank you!</h1>
   <% end %>
 <% end %>
-
-<a class="mx-auto" href="/">home</a>
+  <a href="/">home</a>
+</div>

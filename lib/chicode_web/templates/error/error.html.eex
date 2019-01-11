@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title><%= @conn.assigns.site %></title>
+  <link rel="stylesheet" href="<%= webpack_path(@conn, "css") %>">
+</head>
+<body>
+  <div class="text-center mt-6">
+    <%= if @type == 404 do %>
+    <h1>Page not found.</h1>
+    <% else %>
+    <h1>Uh oh, we messed up. Please check back soon.</h1>
+    <% end %>
+
+    <a href="/">home</a>
+  </div>
+</body>
+</html>
+
