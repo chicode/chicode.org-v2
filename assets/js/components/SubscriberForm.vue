@@ -42,7 +42,6 @@ export default {
         this.status = 'ok'
       } else {
         const { errors } = await resp.json()
-        console.log(errors)
 
         this.error = errors.email[0]
         this.status = 'error'

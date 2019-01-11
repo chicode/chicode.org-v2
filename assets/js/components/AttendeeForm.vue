@@ -83,7 +83,6 @@ export default {
         window.location.href = this.successLocation
       } else {
         const { errors } = await resp.json()
-        console.log(errors)
 
         this.errors = errors
       }

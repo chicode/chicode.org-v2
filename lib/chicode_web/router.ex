@@ -8,13 +8,13 @@ defmodule ChicodeWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  scope "/", ChicodeWeb do
+  scope "/", ChicodeWeb, host: "chicode.org" do
+    post "/", SubscribeController, :new
   end
 
   scope "/", ChicodeWeb.Chicode, host: "chicode.org" do
     pipe_through :browser
 
-    post "/", SubscribeController, :new
     get "/", PageController, :index
   end
 
