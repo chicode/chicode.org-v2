@@ -8,4 +8,4 @@
   <% end %>
 <% end %>
 
-<a class="text-center" href="/">home</a>
+<a class="mx-auto" href="/">home</a>
