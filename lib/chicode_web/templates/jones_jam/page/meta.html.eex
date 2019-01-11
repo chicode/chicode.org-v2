@@ -1,0 +1,8 @@
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@chicode" />
+<meta property="og:url" content="https://jonesjam.org" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JonesJam" />
+<meta property="og:description" content="The first CPS game jam ~~ meet cool people, learn to code, and make games!" />
+<meta property="og:image" content="https://jonesjam.org<%= image(@conn, "card.png") %>" />
+
