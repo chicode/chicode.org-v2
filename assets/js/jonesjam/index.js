@@ -31,10 +31,8 @@ let arrows = [
 let currBody = [4,0,0]
 let oldBody = localStorage.getItem("currBody")
 if (oldBody !== null) {
-  console.log(oldBody)
   currBody = JSON.parse(oldBody)
 }
-console.log(currBody)
 let ctx
 let canvas
 
@@ -55,7 +53,6 @@ window.onload = () => {
           && left <= x
           && bottom >= y
           && top <= y) {
-        console.log(arrows)
         swapBody(arrows[i][3], arrows[i][2])
       }
     }
@@ -73,9 +70,7 @@ function drawBody(ctx, body) {
   ctx.clearRect(0,0,500,200)
   
   arrows.map(function(arrowData) {
-    console.log(arrowData)
     if(arrowData[2] < 0) {
-      console.log("asxfasdFASD")
       ctx.drawImage(arrow, arrowData[0], arrowData[1], 50, 50);
     }
     else {
@@ -107,8 +102,8 @@ function drawBody(ctx, body) {
   let torsox = body[1]-(torsoy*4)
   let legy = Math.trunc(body[2]/5)
   let legx = body[2]-(legy*5)
-  ctx.drawImage(torsoSheet, torsox*115, torsoy*115, 115, 115, 192.5, 75, 115, 115)
-  ctx.drawImage(legSheet, legx*115, legy*140, 115, 140, 192.5,75,115,140)
+  ctx.drawImage(torsoSheet, torsox*115, torsoy*115, 115, 115, 192, 75, 115, 115)
+  ctx.drawImage(legSheet, legx*115, legy*140, 115, 140, 192,70,115,140)
   ctx.drawImage(headSheet,headx*95,heady*95,95,95,202.5,10,95,95)
 
 }
