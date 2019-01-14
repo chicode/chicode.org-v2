@@ -43,7 +43,7 @@
 <section>
   <img class="floating-image right" src="<%= image(@conn, "npc.svg") %>">
   <h3 class="mb-5">NPCs, look here</h3>
-  <h4>If you would like to help us by sponsoring, mentoring, or something else, please reach out to jj@chicode.org.</h4>
+  <h4>If you would like to help us by sponsoring, mentoring, or something else, please reach out to jonesjam@chicode.net.</h4>
 </section>
 </div>
 
