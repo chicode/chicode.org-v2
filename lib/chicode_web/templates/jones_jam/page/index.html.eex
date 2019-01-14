@@ -36,14 +36,14 @@
     <li><span class="time">12:00</span>lunch</li>
     <li><span class="time">03:00</span>act out a play generated with machine-learning!</li>
     <li><span class="time">05:00</span>dinner</li>
-    <li><span class="time">07:00</span>project fair &amp; opening ceremony</li>
+    <li><span class="time">07:00</span>project fair &amp; closing ceremony</li>
   </ul>
 </section>
 
 <section>
   <img class="floating-image right" src="<%= image(@conn, "npc.svg") %>">
   <h3 class="mb-5">NPCs, look here</h3>
-  <h4>If you would like to help us by sponsoring, mentoring, or something else, please reach out to jonesjam@chicode.net.</h4>
+  <h4>If you would like to help us by sponsoring, mentoring, or something else, please reach out to jonesjam@chicode.net</h4>
 </section>
 </div>
 
