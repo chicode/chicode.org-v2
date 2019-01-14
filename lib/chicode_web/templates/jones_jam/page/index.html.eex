@@ -1,7 +1,7 @@
 <div class="container">
 
-<section style="margin-top: 25vh; margin-bottom: 25vh;">
-<img class="mx-auto" style="width: 400px" src="<%= image(@conn, "logo.svg")%>">
+<section class="header">
+<img class="mx-auto header-image" src="<%= image(@conn, "logo.svg")%>">
 <h1>Jones Jam</h1>
 <h2 class="text-red">February 1</h2>
 </section>
@@ -18,7 +18,7 @@
 <section class="text-center">
   <h3>Interested?</h3>
   <h4>create a character to sign up</h4>
-  <canvas id="character" width="500px" height="200px"></canvas>
+  <canvas id="character" class="mx-auto" width="500px" height="200px"></canvas>
   <attendee-form image="<%= image(@conn, "google.svg") %>" success-location="<%= Google.authorize_url! %>" class="mt-5 character-form">
 </section>
 
@@ -41,14 +41,14 @@
 </section>
 
 <section>
-  <img class="floating-image right" src="<%= image(@conn, "npc.svg") %>">
+  <img class="floating-image right npc-img" src="<%= image(@conn, "npc.svg") %>">
   <h3 class="mb-5">NPCs, look here</h3>
   <h4>If you would like to help us by sponsoring, mentoring, or something else, please reach out to jj@chicode.org.</h4>
 </section>
 </div>
 
 <footer class="mt-7">
-  <img class="mx-auto mb-4" src="<%= image(@conn, "wiggly.svg") %>">
+  <img class="mx-auto mb-4 w-50" src="<%= image(@conn, "wiggly.svg") %>">
   <div class="d-flex justify-content-center align-items-center m-3">
     <a href="https://chicode.org"><img style="height: 2rem;" src="<%= image(@conn, "chicode.svg") %>"></a>
     <p class="h6 ml-5">we believe in FOSS, so all of our code is available on <a href="https://github.com/chicode/">github</a>. send us a PR!</p>

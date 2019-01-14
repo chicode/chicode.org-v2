@@ -14,6 +14,10 @@ defmodule Chicode.Attendee do
 
     field :jonesbucks, :integer
 
+    field :head, :integer
+    field :torso, :integer
+    field :legs, :integer
+
     timestamps()
   end
 

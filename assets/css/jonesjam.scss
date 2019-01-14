@@ -13,7 +13,7 @@ $colors: (
   "black": black,
   "white": white,
 );
-
+ 
 $h1-font-size: 6rem;
 $h2-font-size: 3rem;
 $h3-font-size: 3rem;
@@ -32,6 +32,9 @@ $sizes: (
 @import "../node_modules/bootstrap/scss/bootstrap-reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/_variables";
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints";
 @import "./app.scss";
 
 .family-helvetica {
@@ -144,6 +147,7 @@ button img {
   font-size: $h4-font-size;
   display: inline-block;
   text-align: left;
+  line-height: 2rem;
 
   .time {
     @extend .sm-shadow;
@@ -159,6 +163,63 @@ button img {
 }
 
 #character {
-  width: 80%;
+  width: 100%;
   max-width: 500px;
+}
+
+.header-image {
+  width: 400px;
+}
+
+.header {
+  margin-top: 25vh;
+  margin-bottom: 25vh;
+}
+
+@include media-breakpoint-down(sm) {
+  //because boostrap doesn't support responsive font-size
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  li {
+    font-size: 1rem;
+  }
+
+  .header-image {
+    width: 250px;
+  }
+
+  .header {
+    margin-top: 10vh;
+    margin-bottom: 5vh; 
+  }
+  
+  .row {
+    margin-bottom: 0;
+  }
+
+  .col-sm {
+    margin-bottom: 10px; 
+  }
+
+  .npc-img {
+    margin-top: -7rem;  
+  }
 }

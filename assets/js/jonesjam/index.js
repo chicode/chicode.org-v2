@@ -44,8 +44,9 @@ window.onload = () => {
   ctx = canvas.getContext('2d');
 
   canvas.addEventListener('click', function(e) {
-    let x = e.offsetX
-    let y = e.offsetY
+    let clickpos = getMousePos(canvas, e)
+    let x = clickpos.x
+    let y = clickpos.y
     for(let i = 0; i < arrows.length; i++) {
       let left = arrows[i][0], right = arrows[i][0]+50;
       let top = arrows[i][1], bottom = arrows[i][1]+50;
@@ -59,6 +60,17 @@ window.onload = () => {
   }) 
 
   drawBody(ctx, currBody)
+}
+//because canvas scale is responsive canvas space and dom space are different
+function  getMousePos(canvas, evt) {
+  var rect = canvas.getBoundingClientRect(), // abs. size of element
+      scaleX = canvas.width / rect.width,    // relationship bitmap vs. element for X
+      scaleY = canvas.height / rect.height;  // relationship bitmap vs. element for Y
+
+  return {
+    x: (evt.clientX - rect.left) * scaleX,   // scale mouse coordinates after they have
+    y: (evt.clientY - rect.top) * scaleY     // been adjusted to be relative to element
+  }
 }
 
 function drawBody(ctx, body) {
