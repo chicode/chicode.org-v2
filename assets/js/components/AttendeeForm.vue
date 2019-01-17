@@ -52,7 +52,7 @@
         <input name="role" v-model="data.role" value="mentor" type="radio">
         <span></span>
       </label>
- 
+
       <label for="mentor">
         Mentor
       </label>
@@ -89,10 +89,19 @@ const Input = {
 */
 
 const toObject = _.curry((keyFunc, valFunc, input) =>
-  _.zipObject(_.map(keyFunc, input), _.map(valFunc, input))
+  _.zipObject(_.map(keyFunc, input), _.map(valFunc, input)),
 )
 
-const properties = ['firstname', 'lastname', 'gender', 'ethnicity', 'school', 'grade', 'referrer', 'role']
+const properties = [
+  'firstname',
+  'lastname',
+  'gender',
+  'ethnicity',
+  'school',
+  'grade',
+  'referrer',
+  'role',
+]
 
 export default {
   name: 'AttendeeForm',
@@ -123,13 +132,11 @@ export default {
         window.location.href = this.successLocation
       } else {
         const { errors } = await resp.json()
+        console.log(errors)
 
         this.errors = errors
       }
     },
   },
-  watch: {
-
-  }
 }
 </script>
