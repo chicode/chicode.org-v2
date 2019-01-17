@@ -15,7 +15,7 @@
     <%= render @view_module, @view_template, assigns %>
   </div>
   <script src="https://browser.sentry-cdn.com/4.5.1/bundle.min.js" crossorigin="anonymous"></script>
-  <script>Sentry.init({ dsn: 'https://3868d4554ea9439ca7a71e2a3a7eedda@sentry.io/1374061' })</script>
+  <script>Sentry.init({ dsn: 'https://cc42de86370a47b78ed954fbcffa2507@sentry.io/1374070' })</script>
   <script src="<%= webpack_path(@conn, "js") %>"></script>
 </body>
 </html>
