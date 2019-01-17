@@ -111,7 +111,6 @@ export default {
       this.data.torso = currBody[1]
       this.data.legs = currBody[2]
 
-      console.log(this.data)
       const resp = await fetch('/', {
         method: 'post',
         body: JSON.stringify(this.data),
@@ -130,7 +129,7 @@ export default {
     },
   },
   watch: {
-    
+
   }
 }
 </script>
