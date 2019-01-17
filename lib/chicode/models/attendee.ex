@@ -18,6 +18,9 @@ defmodule Chicode.Attendee do
     field :torso, :integer
     field :legs, :integer
 
+    field :role, :string
+    field :referrer, :string
+
     timestamps()
   end
 

@@ -85,6 +85,10 @@ button img {
   display: inline-block;
 }
 
+.w-80 {
+  width: 80%;
+}
+
 .interest-box {
   display: inline-block;
   padding: 8px;
@@ -175,6 +179,27 @@ button img {
 .header {
   margin-top: 25vh;
   margin-bottom: 25vh;
+}
+
+label {
+
+  input[type="radio"] {
+    display:none;
+  }
+
+  span {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: block;
+    background-color: white;
+    border-radius: 100%;
+    border: 3px solid black;
+  }
+
+  input[type="radio"]:checked + span {
+    background-color: map_get($colors, "light-purple") 
+  }
 }
 
 @include media-breakpoint-down(sm) {

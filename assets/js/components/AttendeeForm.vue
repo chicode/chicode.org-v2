@@ -31,6 +31,42 @@
       <p v-if="this.errors.grade">{{ this.errors.grade[0] }}</p>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm">
+      <input class="w-50" placeholder="referrer" name="referrer" v-model="data.referrer">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm d-flex justify-content-center">
+      <label>
+        <input name="role" v-model="data.role" value="attendee" type="radio">
+        <span></span>
+      </label>
+
+      <label for="attendee">
+        Attendee
+      </label>
+    </div>
+    <div class="col-sm d-flex justify-content-center">
+      <label>
+        <input name="role" v-model="data.role" value="mentor" type="radio">
+        <span></span>
+      </label>
+ 
+      <label for="mentor">
+        Mentor
+      </label>
+    </div>
+    <div class="col-sm d-flex justify-content-center">
+      <label>
+        <input name="role" v-model="data.role" value="teacher" type="radio">
+        <span></span>
+      </label>
+      <label for="teacher">
+        Teacher
+      </label>
+    </div>
+  </div>
   <button class="mt-4" @click="submit">
     <img :src="this.image">
     finish by signing in
@@ -56,7 +92,7 @@ const toObject = _.curry((keyFunc, valFunc, input) =>
   _.zipObject(_.map(keyFunc, input), _.map(valFunc, input))
 )
 
-const properties = ['firstname', 'lastname', 'gender', 'ethnicity', 'school', 'grade']
+const properties = ['firstname', 'lastname', 'gender', 'ethnicity', 'school', 'grade', 'referrer', 'role']
 
 export default {
   name: 'AttendeeForm',
