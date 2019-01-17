@@ -1,0 +1,20 @@
+<div class="d-flex">
+  <img src="<%= image(@conn, "ball.svg") %>">
+  <div>
+    <h1 id="title">Jones Jam Golf Jam</h1>
+    <h2>Jan 20 - Room 136</h3>
+  </div>
+  <img src="<%= image(@conn, "hole.svg") %>">
+</div>
+
+<div>
+  <h2>THEME</h2>
+  <%= if DateTime.compare(now(), time_literal(~N[2018-01-24 21:30:00])) == :lt do %>
+    Announced in 3 days
+  <% else %>
+    <%= Application.get_env(:chicode, :theme) %>
+  <% end %>
+</div>
+
+<middle-sections>
+<editor>

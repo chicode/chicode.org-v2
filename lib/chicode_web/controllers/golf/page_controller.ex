@@ -1,4 +1,4 @@
-defmodule ChicodeWeb.JonesJam.PageController do
+defmodule ChicodeWeb.Golf.PageController do
   use ChicodeWeb, :controller
 
   alias Chicode.{Attendee, Repo}
@@ -55,18 +55,6 @@ defmodule ChicodeWeb.JonesJam.PageController do
   end
 
   def thank_you(conn, _args) do
-    redirect(conn, to: "/")
-  end
-
-  def signups(conn, %{"password" => password}) do
-    if password == Application.get_env(:chicode, :password) do
-      render(conn, "signups.html")
-    else
-      redirect(conn, to: "/")
-    end
-  end
-
-  def signups(conn, _args) do
     redirect(conn, to: "/")
   end
 end

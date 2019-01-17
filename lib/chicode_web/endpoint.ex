@@ -66,6 +66,7 @@ defmodule ChicodeWeb.Endpoint do
         "chicode.org" -> "chicode"
         "challenge.chicode.org" -> "challenge"
         "jonesjam.org" -> "jonesjam"
+        "golf.jonesjam.org" -> "golf"
       end
     )
   end

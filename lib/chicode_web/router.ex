@@ -33,5 +33,12 @@ defmodule ChicodeWeb.Router do
     get "/", PageController, :index
     post "/", PageController, :new
     get "/thank-you", PageController, :thank_you
+    get "/signups", PageController, :signups
+  end
+
+  scope "/", ChicodeWeb.Golf, host: "golf.jonesjam.org" do
+    pipe_through :browser
+
+    get "/", PageController, :index
   end
 end

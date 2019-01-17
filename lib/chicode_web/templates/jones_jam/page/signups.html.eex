@@ -1,0 +1,16 @@
+<table style="width:100%">
+<tr>
+  <th>Firstname</th>
+  <th>Lastname</th>
+  <th>School</th>
+  <th>Grade</th>
+</tr>
+<%= for signup <- Chicode.Repo.all(Chicode.Attendee) do %>
+  <tr>
+    <td><%= signup.first_name %></td>
+    <td><%= signup.last_name %></td>
+    <td><%= signup.school %></td>
+    <td><%= signup.grade %></td>
+  </tr>
+<% end %>
+</table>

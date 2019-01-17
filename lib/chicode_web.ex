@@ -70,6 +70,18 @@ defmodule ChicodeWeb do
       defp image(conn, image) do
         static_path(conn, "images", image)
       end
+
+      defp now() do
+        DateTime.utc_now() |> to_chicago
+      end
+
+      defp to_chicago(time) do
+        DateTime.add(time, -6 * 60 * 60, :second)
+      end
+
+      defp time_literal(time_literal) do
+        DateTime.from_naive!(time_literal, "Etc/UTC")
+      end
     end
   end
 

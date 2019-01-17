@@ -77,4 +77,7 @@ config :chicode, Chicode.Repo,
 # Environment
 config :chicode, :env, :dev
 
+config :chicode, :theme, "placeholder"
+config :chicode, :password, "abc"
+
 import_config "oauth2.secret.exs"
