@@ -117,11 +117,10 @@ function drawBody(ctx, body) {
   ctx.drawImage(torsoSheet, torsox*115, torsoy*115, 115, 115, 192, 75, 115, 115)
   ctx.drawImage(legSheet, legx*115, legy*140, 115, 140, 192,70,115,140)
   ctx.drawImage(headSheet,headx*95,heady*95,95,95,202.5,10,95,95)
-
+  localStorage.setItem("currBody", JSON.stringify(currBody))
 }
 
 function swapBody(b, i) {
   currBody[b] += i
-  localStorage.setItem("currBody", JSON.stringify(currBody))
   drawBody(ctx, currBody)
 }
