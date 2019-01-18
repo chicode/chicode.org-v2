@@ -1,41 +1,23 @@
-<!--
-<div class="d-flex">
-  <img src="<%= image(@conn, "ball.svg") %>">
-  <div class="text-center">
-    <h1 hidden>Jones Jam Golf Jam</h1>
-    <img src="<%= image(@conn, "title.svg") %>">
-    <h2>Jan 20 - Room 136</h3>
+<div class="container my-6">
+  <div class="d-flex mx-auto justify-content-center">
+    <img class="d-none d-xl-block mr-6" src="<%= image(@conn, "ball.svg") %>">
+    <div>
+      <img src="<%= image(@conn, "title.svg") %>">
+      <h4 class="mb-5">Jan 20 - Room 136</h4>
+    </div>
+    <img class="d-none d-xl-block ml-6" src="<%= image(@conn, "hole.svg") %>">
   </div>
-  <img src="<%= image(@conn, "hole.svg") %>">
-</div>
 
-<div>
-  <h2>THEME</h2>
-  <%= if DateTime.compare(DateTime.utc_now(), time_literal(~N[2019-01-24 21:30:00])) == :lt do %>
-    Announced in 3 days
-  <% else %>
-    <%= Application.get_env(:chicode, :theme) %>
-  <% end %>
-</div>
+  <div class="bg-light-purple p-3 w-75 mx-auto mt-6">
+    <h4 class="position-absolute">THEME</h4>
+    <h2 class="py-4">
+    <%= if DateTime.compare(DateTime.utc_now(), time_literal(~N[2019-01-24 21:30:00])) == :lt do %>
+      Announced in 3 days
+    <% else %>
+      <%= Application.get_env(:chicode, :theme) %>
+    <% end %>
+    </h2>
+  </div>
 
-<middle-section>
--->
-
-<div class="container mt-5">
-  <img class="mx-auto" src="<%= image(@conn, "title.svg") %>">
-  <h4 class="mb-5">Jan 20 - Room 136</h4>
-  <p>
-    Create a cool visualization/game/whatever based on  the theme. There’s no limit on the size of your program, but programs that use less tokens rank higher.
-  </p>
-  <p>
-    The only requirement is that your game have this function `draw` that accepts a 300x300&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial">canvas object</a>:
-  </p>
-  <pre><code>
-  function draw (canvas) {
-  ...code...
-  }
-  </code></pre>
-  <p>
-    <a href="https://twitter.com/hashtag/tweetcart?lang=en">Here's some inspiration.</a>
-  </p>
+  <middle-section>
 </div>

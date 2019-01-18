@@ -1,9 +1,12 @@
 <template>
   <div>
-    <div class="d-flex">
-      <a href="jonesjam.org/projects">all projects</a>
-      <button @click="toggle">help&nbsp;
-        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="d-flex justify-content-center h5 mt-5 mb-5">
+      <a href="jonesjam.org/projects" class="disabled mr-5">all projects</a>
+      <button @click="toggle" class="text-purple">help
+        <svg v-if="helpExpanded" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.923584 8.16504L7.61046 1.4783L14.2972 8.16504" stroke="#6461FF" stroke-width="2"/>
+        </svg>
+        <svg v-else width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.923584 1.47852L7.61046 8.16525L14.2972 1.47852" stroke="#6461FF" stroke-width="2"/>
         </svg>
       </button>
