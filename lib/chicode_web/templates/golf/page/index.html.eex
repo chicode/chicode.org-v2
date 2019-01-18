@@ -1,3 +1,4 @@
+<!--
 <div class="d-flex">
   <img src="<%= image(@conn, "ball.svg") %>">
   <div class="text-center">
@@ -18,3 +19,23 @@
 </div>
 
 <middle-section>
+-->
+
+<div class="container mt-5">
+  <img class="mx-auto" src="<%= image(@conn, "title.svg") %>">
+  <h4 class="mb-5">Jan 20 - Room 136</h4>
+  <p>
+    Create a cool visualization/game/whatever based on  the theme. There’s no limit on the size of your program, but programs that use less tokens rank higher.
+  </p>
+  <p>
+    The only requirement is that your game have this function `draw` that accepts a 300x300&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial">canvas object</a>:
+  </p>
+  <pre><code>
+  function draw (canvas) {
+  ...code...
+  }
+  </code></pre>
+  <p>
+    <a href="https://twitter.com/hashtag/tweetcart?lang=en">Here's some inspiration.</a>
+  </p>
+</div>
