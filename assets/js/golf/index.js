@@ -1,3 +1,7 @@
 import Vue from 'vue'
+import '../../css/golf.scss'
 
-new Vue({ el: '#root', components: { Main } })
+import Editor from './components/Editor.vue'
+import MiddleSection from './components/MiddleSection.vue'
+
+new Vue({ el: '#root', components: { MiddleSection, Editor } })

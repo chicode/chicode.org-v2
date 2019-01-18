@@ -1,14 +1,6 @@
-@import './jonesjam.css';
+@import './jonesjam.scss';
+@import "./fonts/hermit.css";
 
-.title {
-  color: linear-gradient(
-    135deg,
-    map_get($colors, "dark-yellow") 0%,
-    map_get($colors, "dark-yellow") 43%,
-    map_get($colors, "red") 44%,
-    map_get($colors, "red") 53%,
-    map_get($colors, "purple") 54%,
-    map_get($colors, "purple") 100%,
-  );
+code {
+  font-family: Hermit;
 }
-
