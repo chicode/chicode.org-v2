@@ -11,6 +11,7 @@ $colors: (
   "light-yellow": #FFDD9B,
   "light-purple": #C8C7FF,
   "dark-yellow": #F2C215,
+  "green": #6FCF97,
   "black": black,
   "white": white,
 );
@@ -147,6 +148,36 @@ button img {
   }
 }
 
+#cash-moving {
+  position: absolute;
+  width: 150vw;
+  right: -25vw;
+  .cash {
+    font-size: 2rem;
+    background-color: map_get($colors, "green");
+ box-shadow: -2px 5px 0px #000000;
+    width: 6rem;
+    position: absolute;
+  }
+}
+
+#cash-fill > h3 {
+  font-size: $h1-font-size;
+}
+
+.cash-info {
+  ul > li {
+    font-size: 1.5rem;
+  }
+  ul > li::before {
+    content: "•";
+    color: map_get($colors, "light-red");
+    display: inline-block;
+    width: 1.5rem;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
+}
 
 .schedule {
   font-size: $h4-font-size;
@@ -247,5 +278,22 @@ label {
 
   .npc-img {
     margin-top: -7rem;  
+  }
+
+  #cash-fill {
+    h3 {
+      font-size: 3rem;
+    }
+  }
+
+  .cash-info {
+    ul > li {
+      font-size: 1rem;
+    }
+    ul > li::before {
+      width: 1.5em;
+      margin-left: 1rem;
+      font-size: 1rem;
+    }
   }
 }

@@ -64,7 +64,7 @@ export default {
     box-sizing: content-box;
 
     .input {
-      flex: 1;
+      flex: 0;
       color: black;
     }
   }

@@ -47,6 +47,12 @@ section {
   font-size: 10rem;
 }
 
+.codeathon-img {
+  max-width: 1074px;
+  width: 95%
+}
+
+
 workshops__chris{
   width: 25%;
 }
@@ -84,8 +90,13 @@ workshops__chris{
 
 .subscriber-form {
   .form {
+    
+    justify-content: flex-start;
+    flex-wrap: wrap;
     @extend .button-formal;
+    width: 95%;
     .submit {
+      align-self: center;
       color: map_get($colors, "purple");
     }
   }
@@ -152,6 +163,12 @@ workshops__chris{
   }
 }
 
+@include media-breakpoint-between(sm,md) {
+  .codeathon__text {
+    font-size: 7rem;
+  }
+}
+
 @include media-breakpoint-down(sm) {
   section {
     margin-bottom: 5rem;
@@ -175,9 +192,8 @@ workshops__chris{
     font-size:1.5rem;
   }
 
-  /*should be in app.scss*/
   .display-1 {
-    font-size: 3.5rem;
+    font-size: 3.25rem;
   }
   
   p {
@@ -207,9 +223,14 @@ workshops__chris{
   
   .subscriber-form {
     .form {
+      display: block !important;
+      input {
+        width: 95%;
+      }
       .submit {
         color: map_get($colors, "purple");
         font-size: 1rem;
+        align-self: flex-start;
       }
     }
   }
@@ -299,5 +320,10 @@ workshops__chris{
   }
   .pre {
     display: none;
+  }
+}
+@media (max-width: 350px) {
+  .display-1 {
+    font-size: 2.25rem;
   }
 }

@@ -78,18 +78,18 @@
     <p class="pl-3">We believe that the solution involves showing students a new side to coding, one that places a heavy emphasis on creativity and community. In essence, our programs encourage social, project-based learning -- this allows students to walk out with a feeling of accomplishment and confidence.</p>
   </section>
 
-  <section>
+  <section class="mb-5">
     <div class="bg-blue stretch"><h2 class="text-left text-white mb-5 font-chicago mx-auto w-75">We believe that coding is for everyone</h2></div>
     <p class="bottom__contact">As a group of high school students ourselves, we genuinely believe that coding can be used as a force for good. All of us have used coding to empower ourselves and our communities, and we hope that someday you will too. If you have any questions, or just want to chat, feel free to reach out to us!</p>
     <div class="d-flex flex-wrap mt-5">
       <div class="mr-7">
-        <button class="button-formal"><a href="mailto:hello@chicode.org">get in touch</a></button>
+        <button class="button-formal mb-3"><a href="mailto:hello@chicode.org">get in touch</a></button>
       </div>
       <subscriber-form location="footer" type="chicode">
   </section>
 </div>
 
-<footer class="font-chicago mt-20">
+<footer class="font-chicago mt-10">
   <p class="pre text-muted text-center">100100101011011010111101111101111110000101100101100010111000101100111011001010101010101111101101010101110             100101001010101                                    10001101011101001110                                                     101110110110110101111011010                              1010110111111111111111111011010101010101011111111001010010101001010101010101</p>
   <p class="text-center">we believe in FOSS, so all of our code is available on <a href="https://github.com/chicode/">github</a>. send us a PR!</p>
 </footer>

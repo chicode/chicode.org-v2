@@ -3,6 +3,8 @@ import AttendeeForm from '../components/AttendeeForm.vue'
 
 new Vue({ el: '#root', components: { AttendeeForm } })
 
+
+//character select
 let headSheet = new Image()
 let torsoSheet = new Image()
 let legSheet = new Image()
@@ -28,8 +30,11 @@ let oldBody = localStorage.getItem("currBody")
 if (oldBody !== null) {
   currBody = JSON.parse(oldBody)
 }
+
 let ctx
 let canvas
+
+console.log("asdfasfds")
 
 
 window.onload = () => {
@@ -55,6 +60,45 @@ window.onload = () => {
   }) 
 
   drawBody(ctx, currBody)
+  //generate cash
+  generateCash()
+}
+
+function generateCash() {
+  let container = document.getElementById("cash-moving")
+  let cashAmt = window.innerWidth/20;
+  //hack to allow the weird absolute positioning stuff
+  document.getElementById("cash-fill").style.height = (window.innerHeight/2)+50+"px"
+  for(let i = 0; i < cashAmt; i++) {
+    let cashElement = document.createElement('div')
+
+    cashElement.innerHTML = "CASH"
+
+    cashElement.className += "cash"
+    
+    cashElement.style.left = Math.round(1.5*window.innerWidth*Math.random())+"px"
+
+    cashElement.style.top = Math.round(window.innerHeight/2*Math.random())+"px"
+
+    cashElement.moveSpeed = Math.round(15*Math.random()+5)
+
+    container.appendChild(cashElement)
+  }
+
+  setInterval(updateCash, 20)
+}
+function updateCash() {
+  let cash = document.getElementsByClassName("cash")
+  console.log("update")
+  for(let i = 0; i < cash.length; i++) {
+    let pos = Number(cash[i].style.left.substring(0, cash[i].style.left.length-2))
+    pos += Number(cash[i].moveSpeed)
+    if(pos > window.innerWidth*1.5+100) {
+      pos = -100
+    }
+    cash[i].style.left = pos+"px"
+  }
+
 }
 //because canvas scale is responsive canvas space and dom space are different
 function  getMousePos(canvas, evt) {
