@@ -29,7 +29,6 @@
 
 <section>
   <div id="cash-moving" class="row no-gutters">
-    <div class="cash">CASH</div>
   </div>
   <div id="cash-fill" class="d-flex">
     <!--div to make spacing correct, hacky but works-->
