@@ -25,12 +25,14 @@ let arrows = [
   [320,140,-1,2]
 ]
 
-let currBody = [4,0,0]
+let currBody = [0,0,0]
 let oldBody = localStorage.getItem("currBody")
 if (oldBody !== null) {
   currBody = JSON.parse(oldBody)
 }
-
+if(currBody[0] === null || currBody[1] === null || currBody[2] === null) {
+  currBody = [0,0,0]
+}
 let ctx
 let canvas
 
