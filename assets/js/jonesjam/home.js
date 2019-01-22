@@ -38,7 +38,7 @@ let canvas
 
 
 
-function onCanvasLoad() {
+window.onload = () => {
   //load characters
   
   canvas = document.getElementById("character")
@@ -61,6 +61,7 @@ function onCanvasLoad() {
   }) 
 
   drawBody(ctx, currBody)
+  generateCash()
 }
 
 function generateCash() {
