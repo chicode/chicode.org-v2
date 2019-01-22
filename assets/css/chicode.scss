@@ -92,7 +92,6 @@ workshops__chris{
   .form {
     
     justify-content: flex-start;
-    flex-wrap: wrap;
     @extend .button-formal;
     width: 95%;
     .submit {
@@ -224,6 +223,7 @@ workshops__chris{
   .subscriber-form {
     .form {
       display: block !important;
+      flex-wrap: wrap;
       input {
         width: 95%;
       }
