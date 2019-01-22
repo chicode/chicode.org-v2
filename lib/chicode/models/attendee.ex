@@ -40,6 +40,7 @@ defmodule Chicode.Attendee do
       :referrer
     ])
     |> validate_required([:first_name, :last_name, :school, :grade, :head, :torso, :legs, :role])
+    |> custom_validation(:referrer, &valid_email?/1, "Invalid email address")
     |> unique_constraint(:email, message: "already registered!")
   end
 end

@@ -34,7 +34,7 @@
   <div class="row">
     <div class="col-sm">
       <input class="w-50" placeholder="referrer" name="referrer" v-model="data.referrer">
-      <p class="error" v-if="this.errors.refeerrer">{{ this.errors.referrer[0] }}</p>
+      <p class="error" v-if="this.errors.referrer">{{ this.errors.referrer[0] }}</p>
     </div>
   </div>
   <div class="row">
@@ -78,17 +78,6 @@
 
 <script>
 import _ from 'lodash'
-/*
-const Input = {
-  props: [name, model],
-  render () {
-    return (<div>
-      <input placeholder={this.name} name={this.name} v-model=>
-      <p v-if="this.errors.school">{{ this.errors.school }}</p>
-    </div>)
-  }
-}
-*/
 
 const toObject = _.curry((keyFunc, valFunc, input) =>
   _.zipObject(_.map(keyFunc, input), _.map(valFunc, input)),
