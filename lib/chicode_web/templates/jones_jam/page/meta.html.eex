@@ -6,3 +6,12 @@
 <meta property="og:description" content="The first CPS game jam ~~ meet cool people, learn to code, and make games!" />
 <meta property="og:image" content="https://jonesjam.org<%= image(@conn, "card.png") %>" />
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106173544-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-106173544-7');
+</script>
