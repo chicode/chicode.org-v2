@@ -36,10 +36,9 @@ if(currBody[0] === null || currBody[1] === null || currBody[2] === null) {
 let ctx
 let canvas
 
-console.log("asdfasfds")
 
 
-window.onload = () => {
+function onCanvasLoad() {
   //load characters
   
   canvas = document.getElementById("character")
@@ -62,8 +61,6 @@ window.onload = () => {
   }) 
 
   drawBody(ctx, currBody)
-  //generate cash
-  generateCash()
 }
 
 function generateCash() {
@@ -91,7 +88,6 @@ function generateCash() {
 }
 function updateCash() {
   let cash = document.getElementsByClassName("cash")
-  console.log("update")
   for(let i = 0; i < cash.length; i++) {
     let pos = Number(cash[i].style.left.substring(0, cash[i].style.left.length-2))
     pos += Number(cash[i].moveSpeed)
