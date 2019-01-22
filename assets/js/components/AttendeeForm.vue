@@ -3,37 +3,38 @@
   <div class="row">
     <div class="col-sm">
       <input placeholder="first name" name="first_name" v-model="data.first_name">
-      <p v-if="this.errors.first_name">{{ this.errors.first_name[0] }}</p>
+      <p class="error" v-if="this.errors.first_name">{{ this.errors.first_name[0] }}</p>
     </div>
     <div class="col-sm">
       <input placeholder="last name" name="last_name" v-model="data.last_name">
-      <p v-if="this.errors.last_name">{{ this.errors.last_name[0] }}</p>
+      <p class="error" v-if="this.errors.last_name">{{ this.errors.last_name[0] }}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-sm">
       <input placeholder="gender" name="gender" v-model="data.gender">
-      <p v-if="this.errors.gender">{{ this.errors.gender[0] }}</p>
+      <p class="error" v-if="this.errors.gender">{{ this.errors.gender[0] }}</p>
     </div>
     <div class="col-sm">
       <input placeholder="ethnicity" name="ethnicity" v-model="data.ethnicity">
-      <p v-if="this.errors.ethnicity">{{ this.errors.ethnicity[0] }}</p>
+      <p class="error" v-if="this.errors.ethnicity">{{ this.errors.ethnicity[0] }}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-sm">
       <input placeholder="school" name="school" v-model="data.school">
-      <p v-if="this.errors.school">{{ this.errors.school[0] }}</p>
+      <p class="error" v-if="this.errors.school">{{ this.errors.school[0] }}</p>
     </div>
     <div class="col-sm">
       <input placeholder="grade" name="grade" v-model="data.grade"
         type="number" min="6" max="12">
-      <p v-if="this.errors.grade">{{ this.errors.grade[0] }}</p>
+      <p class="error" v-if="this.errors.grade">{{ this.errors.grade[0] }}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-sm">
       <input class="w-50" placeholder="referrer" name="referrer" v-model="data.referrer">
+      <p class="error" v-if="this.errors.refeerrer">{{ this.errors.referrer[0] }}</p>
     </div>
   </div>
   <div class="row">
@@ -67,6 +68,7 @@
       </label>
     </div>
   </div>
+  <p v-if="this.errors.role">{{ this.errors.role[0] }}</p>
   <button class="mt-4" @click="submit">
     <img :src="this.image">
     finish by signing in

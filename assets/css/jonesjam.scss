@@ -15,7 +15,7 @@ $colors: (
   "black": black,
   "white": white,
 );
- 
+
 $h1-font-size: 6rem;
 $h2-font-size: 3rem;
 $h3-font-size: 3rem;
@@ -229,7 +229,7 @@ label {
   }
 
   input[type="radio"]:checked + span {
-    background-color: map_get($colors, "light-purple") 
+    background-color: map_get($colors, "light-purple")
   }
 }
 
@@ -250,11 +250,11 @@ label {
   h4 {
     font-size: 1rem;
   }
-  
+
   p {
     font-size: 1rem;
   }
-  
+
   li {
     font-size: 1rem;
   }
@@ -265,19 +265,19 @@ label {
 
   .header {
     margin-top: 10vh;
-    margin-bottom: 5vh; 
+    margin-bottom: 5vh;
   }
-  
+
   .row {
     margin-bottom: 0;
   }
 
   .col-sm {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
 
   .npc-img {
-    margin-top: -7rem;  
+    margin-top: -7rem;
   }
 
   #cash-fill {
@@ -296,4 +296,8 @@ label {
       font-size: 1rem;
     }
   }
+}
+
+.error {
+  color: map_get($colors, dark-yellow);
 }
