@@ -44,11 +44,14 @@ defmodule ChicodeWeb.JonesJam.PageController do
             end
 
         if valid? and not exists? do
-          conn
-          |> get_session(:changeset)
-          |> Ecto.Changeset.put_change(:email, email)
-          |> Repo.insert()
-          |> Mailchimp.add()
+          changeset =
+            conn
+            |> get_session(:changeset)
+            |> Ecto.Changeset.put_change(:email, email)
+
+          with {:ok, attendee} <- Repo.insert(changeset) do
+            Mailchimp.add(attendee.email, :jonesjam)
+          end
         end
 
         render(conn, "thank-you.html", valid?: valid?, exists?: exists?)

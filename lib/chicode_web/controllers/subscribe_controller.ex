@@ -8,6 +8,8 @@ defmodule ChicodeWeb.SubscribeController do
   def new(conn, params) do
     changeset = Subscriber.create_changeset(%Subscriber{}, params)
 
-    Repo.insert(changeset)
+    with {:ok, subscriber} <- Repo.insert(changeset) do
+      Mailchimp.add(subscriber.email, :chicode)
+    end
   end
 end
