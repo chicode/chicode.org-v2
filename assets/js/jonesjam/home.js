@@ -35,7 +35,7 @@ if (currBody[0] === null || currBody[1] === null || currBody[2] === null) {
 let ctx
 let canvas
 
-function onCanvasLoad() {
+window.onload = () => {
   //load characters
 
   canvas = document.getElementById('character')
@@ -57,6 +57,7 @@ function onCanvasLoad() {
   })
 
   drawBody(ctx, currBody)
+  generateCash()
 }
 
 function generateCash() {
