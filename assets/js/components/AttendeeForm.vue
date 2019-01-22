@@ -68,7 +68,7 @@
       </label>
     </div>
   </div>
-  <p v-if="this.errors.role">{{ this.errors.role[0] }}</p>
+  <p class="error" v-if="this.errors.role">{{ this.errors.role[0] }}</p>
   <button class="mt-4" @click="submit">
     <img :src="this.image">
     finish by signing in
