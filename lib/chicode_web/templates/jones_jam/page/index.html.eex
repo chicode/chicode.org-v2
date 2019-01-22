@@ -66,6 +66,7 @@
   <ul class="schedule">
     <li><span class="time">08:00</span>opening ceremony</li>
     <li><span class="time">09:00</span>“intro to game dev with python” workshop</li>
+    <li><span class="time">10:00</span>“pixel art” workshop</li>
     <li><span class="time">12:00</span>lunch</li>
     <li><span class="time">03:00</span>act out a play generated with machine-learning!</li>
     <li><span class="time">05:00</span>dinner</li>
