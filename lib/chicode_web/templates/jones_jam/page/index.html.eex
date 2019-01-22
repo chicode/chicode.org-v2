@@ -17,7 +17,7 @@
 <section class="text-center">
   <h3>Interested?</h3>
   <h4>create a character to sign up</h4>
-  <canvas id="character" class="mx-auto" width="500px" height="200px"></canvas>
+  <canvas id="character" class="mx-auto" width="500px" height="200px" onload="onCanvasLoad()"></canvas>
   <attendee-form image="<%= image(@conn, "google.svg") %>" success-location="<%= Google.authorize_url! %>" class="mt-5 character-form">
 </section>
 
@@ -30,7 +30,7 @@
 <section>
   <div id="cash-moving" class="row no-gutters">
   </div>
-  <div id="cash-fill" class="d-flex">
+  <div id="cash-fill" class="d-flex" onload="generateCash()">
     <!--div to make spacing correct, hacky but works-->
     <h3 class="mx-auto justify-content-center">Chicash</h3>
   </div>
