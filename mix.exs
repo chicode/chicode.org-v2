@@ -47,7 +47,8 @@ defmodule Chicode.MixProject do
       {:bcrypt_elixir, "~> 1.0"},
       {:guardian, "~> 1.1.1"},
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
-      {:oauth2, "~> 0.9"}
+      {:oauth2, "~> 0.9"},
+      {:httpoison, "~> 1.4"}
     ]
   end
 

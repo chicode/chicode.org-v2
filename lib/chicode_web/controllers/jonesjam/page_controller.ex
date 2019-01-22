@@ -48,6 +48,7 @@ defmodule ChicodeWeb.JonesJam.PageController do
           |> get_session(:changeset)
           |> Ecto.Changeset.put_change(:email, email)
           |> Repo.insert()
+          |> Mailchimp.add()
         end
 
         render(conn, "thank-you.html", valid?: valid?, exists?: exists?)

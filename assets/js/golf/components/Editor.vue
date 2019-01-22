@@ -28,9 +28,9 @@ import CodeMirror from './CodeMirror.vue'
 
 export default {
   name: 'Editor',
-  data: {
+  data: () => ({
     code: '',
-  },
+  }),
   components: { CodeMirror },
   computed: {
     tokenCount() {
