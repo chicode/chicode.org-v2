@@ -17,6 +17,6 @@ defmodule Mailchimp do
       ]
     }
 
-    HTTPoison.post(@list_endpoint, Jason.encode!(body), headers) do
+    HTTPoison.post(@list_endpoint, Jason.encode!(body), headers)
   end
 end
