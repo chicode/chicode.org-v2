@@ -10,6 +10,8 @@ defmodule Chicode.Application do
       raise "Dev server must be run with the DEV_HOST environmental variable specifying the desired host."
     end
 
+    :ets.new(:session, [:named_table, :public, read_concurrency: true])
+
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
