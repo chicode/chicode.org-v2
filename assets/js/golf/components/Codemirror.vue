@@ -18,7 +18,7 @@ import 'codemirror/lib/codemirror.css'
 import 'codemirror/addon/edit/matchbrackets.js'
 
 export default {
-  name: 'CodeMirror',
+  name: 'Codemirror',
 
   components: { codemirror },
 
