@@ -11,6 +11,8 @@
     <td><%= signup.last_name %></td>
     <td><%= signup.school %></td>
     <td><%= signup.grade %></td>
+    <td><%= signup.email %></td>
+    <td><%= signup.role %></td>
   </tr>
 <% end %>
 </table>
