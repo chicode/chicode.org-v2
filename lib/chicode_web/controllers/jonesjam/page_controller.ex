@@ -44,17 +44,24 @@ defmodule ChicodeWeb.JonesJam.PageController do
             end
 
         if valid? and not exists? do
-          changeset =
-            conn
-            |> get_session(:changeset)
-            |> Ecto.Changeset.put_change(:email, email)
+          case get_session(conn, :changeset) do
+            nil ->
+              # weird bug where changeset session var dissappears
+              # solution: redirect to a google form
+              render(conn, "google-form.html")
 
-          with {:ok, attendee} <- Repo.insert(changeset) do
-            Mailchimp.add(attendee.email, :jonesjam)
+            changeset ->
+              changeset = changeset |> Ecto.Changeset.put_change(:email, email)
+
+              with {:ok, attendee} <- Repo.insert(changeset) do
+                Mailchimp.add(attendee.email, :jonesjam)
+              end
+
+              render(conn, "thank-you.html", valid?: valid?, exists?: exists?)
           end
+        else
+          render(conn, "thank-you.html", valid?: valid?, exists?: exists?)
         end
-
-        render(conn, "thank-you.html", valid?: valid?, exists?: exists?)
     end
   end
 
