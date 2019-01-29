@@ -71,7 +71,7 @@ defmodule ChicodeWeb.JonesJam.PageController do
 
   def signups(conn, %{"password" => password}) do
     if password == Application.get_env(:chicode, :password) do
-      render(conn, "signups.html")
+      render(conn, "signups.html", signups: Chicode.Repo.all(Chicode.Attendee))
     else
       redirect(conn, to: "/")
     end
