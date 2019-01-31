@@ -41,4 +41,17 @@ defmodule ChicodeWeb.Router do
 
     get "/", PageController, :index
   end
+
+  scope "/", ChicodeWeb.Portal, host: "portal.jonesjam.org" do
+    pipe_through :browser
+
+    get "/", PageController, :index
+    get "/sign-in", PageController, :sign_in
+    get "/thank-you", PageController, :thank_you
+    get "/team", PageController, :team
+    post "/team", PageController, :new_team
+    post "/team/submit", PageController, :submit
+    get "/voting", PageController, :voting
+    get "/sign-out", PageController, :sign_out
+  end
 end

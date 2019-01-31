@@ -106,6 +106,7 @@ export default {
   },
   methods: {
     async submit() {
+    console.log(this.successLocation)
       let currBody = JSON.parse(localStorage.getItem('currBody'))
       this.data.head = currBody[0]
       this.data.torso = currBody[1]

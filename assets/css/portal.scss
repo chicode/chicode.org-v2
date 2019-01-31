@@ -1,0 +1,128 @@
+@import './fonts/chicago.css';
+@import './fonts/helvetica.css';
+
+$headings-font-family: Chicago;
+
+$colors: (
+  "red": #FF3B50,
+  "yellow": #F3E45C,
+  "purple": #6461FF,
+  "light-red": #FF6172,
+  "light-yellow": #FFDD9B,
+  "light-purple": #C8C7FF,
+  "dark-yellow": #F2C215,
+  "green": #6FCF97,
+  "black": black,
+  "white": white,
+);
+
+$h1-font-size: 6rem;
+$h2-font-size: 3rem;
+$h3-font-size: 3rem;
+$h4-font-size: 1.5rem;
+
+$spacers: (
+  6: 5rem,
+  7: 10rem,
+);
+
+$sizes: (
+  60: 60%
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/_variables";
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "./app.scss";
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.lg-shadow {
+  box-shadow: -4px 11px 0 black;
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: center;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+button img {
+  display: inline-block;
+}
+
+.sign-in {
+  background-color: map_get($colors, "light-red");
+  color: white;
+  padding: .4rem .5rem;
+  font-weight: bold;
+  font-family: Chicago;
+  font-size: 2rem;
+  width: 25%;
+  img {
+    height: 60%;
+    padding-bottom: 5px;
+  }
+}
+
+.button-primary {
+  background-color: map_get($colors, "purple");
+  color: white;
+  font-weight: bold;
+  font-family: Chicago;
+  font-size: 1.5rem;
+  padding: .2rem .3rem;
+  width: 10rem;
+}
+
+.button-secondary {
+  border: 2px solid map_get($colors, "purple");
+  color: black;
+  font-weight: bold;
+  font-family: Chicago;
+  font-size: 1.5rem;
+  padding: .2rem .3rem;
+  width: 10rem;
+}
+
+input[type="file"] {
+  display: none
+}
+
+input {
+  background-color: white;
+  border: 2px solid map_get($colors, "purple");
+  font-size: 1.25rem;
+  padding: .2rem .3rem;
+  font-family: Chicago;
+}
+
+.description {
+  background-color: white;
+  border: 2px solid map_get($colors, "purple");
+  resize: none;
+  padding: .2rem .3rem;
+  font-size: 1.5rem;
+  font-family: Chicago;
+}
+
+.gametitle {
+  border: none;
+  font-size: 5rem;
+}
+
+header > a {
+  margin-top: 3rem;
+  font-size: 1.25rem;
+  font-family: Chicago;
+}

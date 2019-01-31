@@ -19,6 +19,7 @@ module.exports = (_env, _options) => ({
     chicode: ['@babel/polyfill', './js/chicode/index'],
     jonesjam: ['@babel/polyfill', './js/jonesjam/index'],
     golf: ['@babel/polyfill', './js/golf/index'],
+    portal: ['@babel/polyfill', './js/portal/index']
   },
   output: {
     filename: '[name].js',

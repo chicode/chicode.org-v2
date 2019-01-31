@@ -1,0 +1,55 @@
+<div class="container">
+
+  <header class="d-flex flex-row mx-auto w-100 justify-content-between align-items-center">
+    <img src="<%=image(@conn, "title-short.svg")%>">
+    <a href="/team">Team</a>
+    <a href="/voting">Voting</a>
+    <a href="/sign-out">
+      Sign out (<%= @email %>)
+    </a>
+  </header>
+
+<%= if not true do %>
+
+
+  <section>
+    <h2 class="mt-5">No Team Created</h2>
+    <form class="d-flex flex-row mx-auto mt-5 justify-content-center align-items-center mb-6"> 
+      <input placeholder="Team Name"> <button class="lg-shadow button-primary ml-5">New Team</button>
+    </form>
+  </section>
+
+  <section class="mb-5">
+    <h3 class="mt-7 text-red">You must create a team before submitting</h3>
+  </section>
+<% else %>
+  
+  <section class="mb-5 w-75 mx-auto">
+    <h1>@team</h1>
+    <button class="lg-shadow button-secondary">Add</button>
+  </section>
+  
+  <section class="mb-5 w-75 mx-auto">
+    <input class="mb-5 gametitle" placeholder="Game Title">
+    <div class="row mx-auto">
+      <img class="w-50" src="<%=image(@conn, "test.png")%>">
+      <div>
+        <label class="lg-shadow button-secondary ml-5 text-center">
+          <input type="file">
+          <span>Upload</span>
+        </label>
+      </div>
+    </div>
+    <div class="mt-5 mb-2">
+      <textarea class="w-100 description" rows="6" placeholder="Description"> </textarea>
+    </div>
+    <input class="mb-2 w-100" placeholder="Technologies used">
+    <input class="mb-2 w-100" placeholder="Link to code">
+    <div class="d-flex flex-row-reverse mt-4">
+      <button class="lg-shadow button-secondary ml-5">Save</button>
+      <button class="lg-shadow button-primary">Submit</button>
+    </div>
+  </section>
+<% end %>
+</div>
+

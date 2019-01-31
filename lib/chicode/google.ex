@@ -13,6 +13,7 @@ defmodule Google do
       authorize_url: "/o/oauth2/auth",
       token_url: "/o/oauth2/token",
       redirect_uri:
+        # TODO fix so it works with multiple hosts
         if Application.get_env(:chicode, :env) == :dev do
           "http://localhost:4000/thank-you"
         else

@@ -21,6 +21,8 @@ defmodule Chicode.Attendee do
     field(:role, :string)
     field(:referrer, :string)
 
+    field(:team, :string)
+
     timestamps()
   end
 
@@ -37,7 +39,8 @@ defmodule Chicode.Attendee do
       :torso,
       :legs,
       :role,
-      :referrer
+      :referrer,
+      :team
     ])
     |> validate_required([:first_name, :last_name, :school, :grade, :head, :torso, :legs, :role])
     |> custom_validation(:referrer, &valid_email?/1, "Invalid email address")
