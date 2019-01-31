@@ -45,6 +45,14 @@ server {
 }
 
 server {
+	listen 80;
+	listen [::]:80;
+	server_name golf.jonesjam.org;
+
+	return 301 https://golf.jonesjam.org$request_uri;
+}
+
+server {
 	listen 443 ssl http2;
 	listen [::]:443 ssl http2;
 	server_name www.chicode.org;
@@ -70,7 +78,7 @@ server {
 
 	include snippets/ssl-chicode.conf;
 
-	server_name chicode.org jonesjam.org challenge.chicode.org;
+	server_name chicode.org jonesjam.org challenge.chicode.org golf.jonesjam.org;
 
 	location / {
 		allow all;
