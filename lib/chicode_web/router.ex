@@ -16,6 +16,7 @@ defmodule ChicodeWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/slack", PageController, :slack
   end
 
   scope "/", ChicodeWeb.Challenge, host: "challenge.chicode.org" do

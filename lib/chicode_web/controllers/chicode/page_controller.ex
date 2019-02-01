@@ -10,4 +10,10 @@ defmodule ChicodeWeb.Chicode.PageController do
   defp events() do
     [%{date: "May 5", name: "Jones Jam", link: "https://jonesjam.org"}]
   end
+
+  def slack(conn, _params) do
+    redirect(conn,
+      external: "https://join.slack.com/t/chicode/signup"
+    )
+  end
 end
