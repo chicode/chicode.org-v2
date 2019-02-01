@@ -12,14 +12,17 @@ defmodule Chicode.Team do
       field :image, :string
       field :members, {:array, :string}
 
+      field :submit, :boolean
+      field :fun, :integer
+      field :creativity, :integer
+
       timestamps()
   end
 
   def create_changeset(team \\ %Chicode.Team{}, attrs \\ %{}) do
     team
-    |> cast(attrs, [:name, :game_name, :desc, :tech_desc, :code_link, :image, :members])
+    |> cast(attrs, [:name, :game_name, :desc, :tech_desc, :code_link, :image, :members, :submit, :fun, :creativity])
     |> validate_required([:name])
     |> unique_constraint(:name, message: "Team already exists")
-
   end
 end

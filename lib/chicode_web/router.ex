@@ -50,8 +50,10 @@ defmodule ChicodeWeb.Router do
     get "/thank-you", PageController, :thank_you
     get "/team", PageController, :team
     post "/team", PageController, :new_team
+    post "/team/member", PageController, :new_member
     post "/team/submit", PageController, :submit
     get "/voting", PageController, :voting
+    post "/voting/vote/:id/:category", PageController, :vote
     get "/sign-out", PageController, :sign_out
   end
 end

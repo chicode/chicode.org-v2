@@ -9,13 +9,13 @@
     </a>
   </header>
 
-<%= if not true do %>
+<%= if is_nil(@team) do %>
 
 
   <section>
     <h2 class="mt-5">No Team Created</h2>
-    <form class="d-flex flex-row mx-auto mt-5 justify-content-center align-items-center mb-6"> 
-      <input placeholder="Team Name"> <button class="lg-shadow button-primary ml-5">New Team</button>
+    <form action="/team" method="POST" class="d-flex flex-row mx-auto mt-5 justify-content-center align-items-center mb-6"> 
+      <input name="name" placeholder="Team Name"> <button class="lg-shadow button-primary ml-5">New Team</button>
     </form>
   </section>
 
@@ -25,31 +25,39 @@
 <% else %>
   
   <section class="mb-5 w-75 mx-auto">
-    <h1>@team</h1>
-    <button class="lg-shadow button-secondary">Add</button>
+    <h1><%=@team.name%></h1>
+    
+    <div class="w-50 mx-auto bg-light-yellow lg-shadow p-3">
+      <%= for teammember <- @team.members do %>
+        <div class="w-100 mx-auto text-center font-chicago h4"><%= teammember %></div>
+      <% end %>
+    </div>
+
+    <form action="/team/member" method="POST" class="d-flex flex-row mx-auto mt-5 justify-content-center align-items-center mb-6"> 
+      <input name="member" placeholder="Team Member (email)"> <button class="lg-shadow button-secondary ml-5">Add</button>
+    </form>
   </section>
   
-  <section class="mb-5 w-75 mx-auto">
-    <input class="mb-5 gametitle" placeholder="Game Title">
+  <form action="/team/submit" enctype="multipart/form-data" method="POST" class="mb-5 w-75 mx-auto">
+    <input class="mb-5 gametitle" name="game_name" autocomplete="off" value="<%=@team.game_name%>" placeholder="Game Title">
     <div class="row mx-auto">
       <img class="w-50" src="<%=image(@conn, "test.png")%>">
       <div>
         <label class="lg-shadow button-secondary ml-5 text-center">
-          <input type="file">
+          <input name="image" type="file">
           <span>Upload</span>
         </label>
       </div>
     </div>
     <div class="mt-5 mb-2">
-      <textarea class="w-100 description" rows="6" placeholder="Description"> </textarea>
+      <textarea class="w-100 description p-2" name="desc" autocomplete="off" rows="3" placeholder="Description"><%=@team.desc%></textarea>
     </div>
-    <input class="mb-2 w-100" placeholder="Technologies used">
-    <input class="mb-2 w-100" placeholder="Link to code">
+    <input class="mb-2 w-100 p-2" name="tech_desc" autocomplete="off" value="<%=@team.tech_desc%>" placeholder="Technologies used">
+    <input class="mb-2 w-100 p-2" name="code_link" autocomplete="off" value="<%=@team.code_link%>" placeholder="Link to code">
     <div class="d-flex flex-row-reverse mt-4">
-      <button class="lg-shadow button-secondary ml-5">Save</button>
       <button class="lg-shadow button-primary">Submit</button>
     </div>
-  </section>
+  </form>
 <% end %>
 </div>
 
