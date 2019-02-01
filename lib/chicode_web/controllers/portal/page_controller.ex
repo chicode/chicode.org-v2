@@ -31,7 +31,7 @@ defmodule ChicodeWeb.Portal.PageController do
   end
 
   def team(conn, _params) do
-    mail = get_session(conn, :mail) 
+    email = get_session(conn, :mail) 
     user = Chicode.Repo.get_by(Chicode.Attendee, email: email)
 
     team = Chicode.Repo.get_by(Chicode.Team, name: user.team)
