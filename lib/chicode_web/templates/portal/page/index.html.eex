@@ -3,7 +3,7 @@
   <img class="mx-auto w-100" alt="Jones Jam" src="<%= image(@conn, "jones-jam-title.svg") %>">
   <h3 class="mt-3">Portal</h3>
 
-  <a href="/sign-in">
+  <a href="<%=Google.authorize_url!%>">
     <button class="mx-auto mt-7 lg-shadow sign-in"> <img src="<%= image(@conn, "google.svg") %>"> Sign In</button>
   </a>
 </div>

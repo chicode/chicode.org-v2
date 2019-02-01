@@ -15,9 +15,9 @@ defmodule Google do
       redirect_uri:
         # TODO fix so it works with multiple hosts
         if Application.get_env(:chicode, :env) == :dev do
-          "http://localhost:4000/thank-you"
+          "http://localhost:4000/sign-in"
         else
-          "https://jonesjam.org/thank-you"
+          "https://portal.jonesjam.org/sign-in"
         end
     ]
   end

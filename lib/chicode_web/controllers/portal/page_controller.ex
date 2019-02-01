@@ -13,12 +13,8 @@ defmodule ChicodeWeb.Portal.PageController do
     render(conn, "index.html")
   end
 
-  def sign_in(conn, _params) do
-    redirect(conn, external: Google.authorize_url!)    
-  end
-
   # make sure that oauth uri is added to google config
-  def thank_you(conn, %{"code" => code}) do
+  def sign_in(conn, %{"code" => code}) do
     try do
       Google.get_token!(code: code)
     rescue
@@ -142,33 +138,56 @@ defmodule ChicodeWeb.Portal.PageController do
   def vote(conn, %{"id" => id, "category" => category}) do
     email = get_session(conn, :email)
     email = "cmsparks@cps.edu"
-
+    user = Chicode.Repo.get_by(Chicode.Attendee, email: email)
     team = Chicode.Repo.get(Chicode.Team, id)
-
-    team_changeset =
+    team_changeset = 
     case category do
       "fun" ->
         case team.fun do
           nil ->
-            team_changeset = Ecto.Changeset.change(team_changeset, fun: 1)
+            Team.create_changeset(team, %{fun: 1})
           _ ->
-            team_changeset = Ecto.Changeset.change(team_changeset, fun: team.fun+1)
+            Team.create_changeset(team, %{fun: team.fun+1})
         end
       "creative" ->
         case team.creativity do
           nil ->
-            team_changeset = Team.create_changeset(team, %{creativity: 1})
+            Team.create_changeset(team, %{creativity: 1})
           _ -> 
-            team_changeset = Team.create_changeset(team, %{creativity: team.creativity+1})
+            Team.create_changeset(team, %{creativity: team.creativity+1})
         end
     end
+
+    hasVoted =
+    case category do
+      "fun" ->
+        Enum.member(user.fun_votes, id)
+      "creative" ->
+        Enum.member(user.creative_votes, id)
+    end
     
-    IO.inspect(team)
-    case team_changeset do
-      %{valid?: true} ->
-        Repo.update(team_changeset)
-      _ ->
-        {:error, team_changeset}
+    if not hasVoted do
+      user_changeset =
+      case category do
+        "fun" ->
+          Attendee.create_changeset(user, %{fun_votes: user.fun_votes ++ id})
+        "creative" ->
+          Attendee.create_changeset(user, %{creative_votes: user.creaetive_votes ++ id})
+      end
+      
+      case user_changeset do
+        %{valid?: true} ->
+          Repo.update(user_changeset)
+        _ ->
+          {:error, user_changeset}
+      end
+      
+      case team_changeset do
+        %{valid?: true} ->
+          Repo.update(team_changeset)
+        _ ->
+          {:error, team_changeset}
+      end
     end
 
     send_resp(conn, :ok, "ok")

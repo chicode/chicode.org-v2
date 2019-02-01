@@ -23,6 +23,9 @@ defmodule Chicode.Attendee do
 
     field(:team, :string)
 
+    field(:fun_votes, {:array, :integer})
+    field(:creative_votes, {:array, :integer})
+
     timestamps()
   end
 
@@ -40,7 +43,9 @@ defmodule Chicode.Attendee do
       :legs,
       :role,
       :referrer,
-      :team
+      :team,
+      :fun_votes,
+      :creative_votes
     ])
     |> validate_required([:first_name, :last_name, :school, :grade, :head, :torso, :legs, :role])
     |> custom_validation(:referrer, &valid_email?/1, "Invalid email address")

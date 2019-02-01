@@ -12,7 +12,7 @@
   <section class="d-flex flex-column">
     <%= for team <- @teams do %>
       <div class="row bg-light-purple w-100 mx-auto lg-shadow p-4 m-4">
-        <img class="col-4" src="<%=image(@conn, "test.png")%>">
+        <img class="col-4" src="<%=team.image%>">
         <div class="col-6">
           <h4 class="text-left">
             <%= team.name %>

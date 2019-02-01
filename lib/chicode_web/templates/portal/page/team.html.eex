@@ -40,18 +40,13 @@
   
   <form action="/team/submit" enctype="multipart/form-data" method="POST" class="mb-5 w-75 mx-auto">
     <input class="mb-5 gametitle" name="game_name" autocomplete="off" value="<%=@team.game_name%>" placeholder="Game Title">
-    <div class="row mx-auto">
-      <img class="w-50" src="<%=image(@conn, "test.png")%>">
-      <div>
-        <label class="lg-shadow button-secondary ml-5 text-center">
-          <input name="image" type="file">
-          <span>Upload</span>
-        </label>
-      </div>
-    </div>
     <div class="mt-5 mb-2">
       <textarea class="w-100 description p-2" name="desc" autocomplete="off" rows="3" placeholder="Description"><%=@team.desc%></textarea>
     </div>
+    <div class="row mx-auto">
+      <img class="w-75" src="<%=@team.image%>">
+    </div>
+    <input class="mb-2 w-100 p-2" name="image" autocomplete="off" value="<%=@team.image%>" placeholder="Image Link">
     <input class="mb-2 w-100 p-2" name="tech_desc" autocomplete="off" value="<%=@team.tech_desc%>" placeholder="Technologies used">
     <input class="mb-2 w-100 p-2" name="code_link" autocomplete="off" value="<%=@team.code_link%>" placeholder="Link to code">
     <div class="d-flex flex-row-reverse mt-4">
