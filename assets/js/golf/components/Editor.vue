@@ -6,11 +6,11 @@
       <div class="d-flex">
         <button @click="run">run</button>
         <div class="indicator">
-          <p>{{ tokenCount() }}</p>
+          <p>{{ tokenCount }}</p>
           <p>tokens</p>
         </div>
         <div class="indicator">
-          <p>{{ lineCount() }}</p>
+          <p>{{ lineCount }}</p>
           <p>lines</p>
         </div>
       </div>
@@ -24,14 +24,14 @@
 </template>
 
 <script>
-import CodeMirror from './CodeMirror.vue'
+import Codemirror from './Codemirror.vue'
 
 export default {
   name: 'Editor',
   data: () => ({
     code: '',
   }),
-  components: { CodeMirror },
+  components: { Codemirror },
   computed: {
     tokenCount() {
       return this.code.split(' ')

@@ -12,6 +12,7 @@
     <h1>Page not found.</h1>
     <% else %>
     <h1>Uh oh, we messed up. Please check back soon.</h1>
+    <p class="mt-5">Does this keep happening? <a href="mailto:jonesjam@chicode.org">Send us an email!</a></p>
     <% end %>
 
     <a href="/">home</a>

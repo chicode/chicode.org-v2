@@ -64,6 +64,7 @@
 <section>
   <h3 class="mb-5">Complete Schedule</h3>
   <ul class="schedule">
+    <li><span class="time">07:30</span>doors open</li>
     <li><span class="time">08:00</span>opening ceremony</li>
     <li><span class="time">09:00</span>“intro to game dev with python” workshop</li>
     <li><span class="time">10:00</span>“pixel art” workshop</li>

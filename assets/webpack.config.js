@@ -9,6 +9,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = (_env, _options) => ({
   mode: process.env.NODE_ENV,
+  stats: 'minimal',
   optimization: {
     minimizer: [
       new UglifyJsPlugin({ cache: true, parallel: true, sourceMap: false }),

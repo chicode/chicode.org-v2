@@ -33,7 +33,7 @@
   </div>
   <div class="row">
     <div class="col-sm">
-      <input class="w-50" placeholder="referrer" name="referrer" v-model="data.referrer">
+      <input class="w-50" placeholder="referrer email" name="referrer" v-model="data.referrer">
       <p class="error" v-if="this.errors.referrer">{{ this.errors.referrer[0] }}</p>
     </div>
   </div>
