@@ -31,8 +31,7 @@ defmodule ChicodeWeb.Portal.PageController do
   end
 
   def team(conn, _params) do
-    # mail = get_session(conn, :mail) 
-    email = "cmsparks@cps.edu"
+    mail = get_session(conn, :mail) 
     user = Chicode.Repo.get_by(Chicode.Attendee, email: email)
 
     team = Chicode.Repo.get_by(Chicode.Team, name: user.team)
@@ -45,11 +44,9 @@ defmodule ChicodeWeb.Portal.PageController do
 
   def voting(conn, _params) do
     email = get_session(conn, :mail)
+
     #when submit: true once implemented
-    email = "cmsparks@cps.edu"
     teams = Chicode.Repo.all(Chicode.Team)
-    
-    IO.inspect(teams)
 
     case is_nil(email) do
       true -> redirect(conn, to: "/")
@@ -58,14 +55,13 @@ defmodule ChicodeWeb.Portal.PageController do
   end
 
   def sign_out(conn, _params) do
-    #clear_session(conn)
+    clear_session(conn)
 
     redirect(conn, to: "/")
   end
 
   def new_team(conn, %{"name" => name}) do
     email = get_session(conn, :email)
-    email = "cmsparks@cps.edu"
     team_changeset = Team.create_changeset(%Team{}, %{name: name, members: [email]})
     
     attendee_changeset = Attendee.create_changeset(Chicode.Repo.get_by(Chicode.Attendee, email: email), %{team: name})
@@ -89,7 +85,6 @@ defmodule ChicodeWeb.Portal.PageController do
 
   def submit(conn, params) do
     email = get_session(conn, :email)
-    email = "cmsparks@cps.edu"
     team = Chicode.Repo.get_by(Chicode.Attendee, email: email).team
     
     team_changeset = Team.create_changeset(Chicode.Repo.get_by(Chicode.Team, name: team), params)
@@ -107,13 +102,12 @@ defmodule ChicodeWeb.Portal.PageController do
 
   def new_member(conn, %{"member" => member}) do
     email = get_session(conn, :email)
-    email = "cmsparks@cps.edu"
     user = Chicode.Repo.get_by(Chicode.Attendee, email: email)
     team = Chicode.Repo.get_by(Chicode.Team, name: user.team)
 
     member_list = team.members
 
-    team_changeset = Team.create_changeset(team, %{members: member_list ++ member})
+    team_changeset = Team.create_changeset(team, %{members: member_list ++ [member]})
     # todo add error handling if it returns nil
     attendee_changeset = Attendee.create_changeset(Chicode.Repo.get_by(Chicode.Attendee, email: member), %{team: team.name})
 
@@ -137,7 +131,6 @@ defmodule ChicodeWeb.Portal.PageController do
 
   def vote(conn, %{"id" => id, "category" => category}) do
     email = get_session(conn, :email)
-    email = "cmsparks@cps.edu"
     user = Chicode.Repo.get_by(Chicode.Attendee, email: email)
     team = Chicode.Repo.get(Chicode.Team, id)
     team_changeset = 
@@ -157,22 +150,38 @@ defmodule ChicodeWeb.Portal.PageController do
             Team.create_changeset(team, %{creativity: team.creativity+1})
         end
     end
-
+    
     hasVoted =
     case category do
       "fun" ->
-        Enum.member(user.fun_votes, id)
+        if not is_nil(user.fun_votes) do
+          Enum.member?(user.fun_votes, elem(Integer.parse(id),0))
+        else
+          false
+        end
       "creative" ->
-        Enum.member(user.creative_votes, id)
+        if not is_nil(user.creative_votes) do
+          Enum.member?(user.creative_votes, elem(Integer.parse(id),0))
+        else
+          false
+        end
     end
-    
+  
     if not hasVoted do
       user_changeset =
       case category do
         "fun" ->
-          Attendee.create_changeset(user, %{fun_votes: user.fun_votes ++ id})
+          if is_nil(user.fun_votes) do
+            Attendee.create_changeset(user, %{fun_votes: [id]})
+          else
+            Attendee.create_changeset(user, %{fun_votes: user.fun_votes ++ [id]})
+          end
         "creative" ->
-          Attendee.create_changeset(user, %{creative_votes: user.creaetive_votes ++ id})
+          if is_nil(user.creative_votes) do
+            Attendee.create_changeset(user, %{creative_votes: [id]})
+          else
+            Attendee.create_changeset(user, %{creative_votes: user.creative_votes ++ [id]})
+          end
       end
       
       case user_changeset do
