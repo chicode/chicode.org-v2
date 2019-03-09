@@ -1,13 +1,13 @@
 <template>
-<div class="subscriber-form">
-  <div class="form" @submit="submit">
-    <input name="email" placeholder="joe@joe.party" type="text" class="input" v-model="email">
-    <button class="submit" @click="submit">done</button>
+  <div class="subscriber-form">
+    <div class="form" @submit="submit">
+      <input name="email" placeholder="joe@joe.party" type="text" class="input" v-model="email" />
+      <button class="submit" @click="submit">done</button>
+    </div>
+    <p v-if="status === 'ok'" class="small text-green">subscribed.</p>
+    <p v-else-if="status === 'error'" class="small text-red">{{ this.error }}</p>
+    <p v-else class="small text-weight-bold mt-1 ml-1">no spam. ever.</p>
   </div>
-  <p v-if="status === 'ok'" class="small text-green">subscribed.</p>
-  <p v-else-if="status === 'error'" class="small text-red">{{ this.error }}</p>
-  <p v-else class="small text-weight-bold">no spam. ever.</p>
-</div>
 </template>
 
 <script>
@@ -26,7 +26,7 @@ export default {
     },
     type: {
       require: true,
-    }
+    },
   },
   methods: {
     async submit() {

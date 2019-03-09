@@ -9,21 +9,39 @@
     <img class="mx-auto codeathon-img" src="<%= image(@conn, "codeathon.png") %>">
     <h2 class="text-shadow-dark codeathon__text text-grey h2-section mt-m-5">CODEATHON</h2>
     <p class="text-center w-75 mx-auto">Nothing brings students together like working on the same project. That’s why we make codeathons as social and creative as possible - code is just one part of what’s practiced, along with art, music, design, and so on. And if someone’s a beginner, then no problem! Our workshops and mentors gladly help them along the way.</p>
-    <div class="row align-items-center mt-7 font-chicago">
-      <div class="col-lg">
-        <h3 class="text-shadow-dark text-red-light mb-5">Upcoming Events</h3>
-        <ul>
-        <%= for event <- @events do
-          content_tag :li, class: "pre mb-4" do
-             raw "##{safe_to_string(content_tag :a, event.name, href: event.link)}"
-          end
-        end %>
-        </ul>
-        <a href="mailto:hello@chicode.org">Help us make more!</a>
+    <div class="mt-7 font-chicago">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-shadow-dark text-red-light mb-4 mb-md-5">Upcoming</h3>
+          <ul>
+          <%= for event <- @events do
+            content_tag :li, class: "mb-3" do
+              if Map.has_key?(event, :link) do
+                raw "#{safe_to_string(content_tag :a, event.name, href: event.link)}"
+              else
+                "#{event.date}: #{event.name}"
+              end
+            end
+          end %>
+          </ul>
+          <a href="mailto:hello@chicode.org">Help us make more!</a>
+        </div>
+        <div class="col mt-5 mt-md-0">
+          <h3 class="text-shadow-dark text-red-light mb-4 mb-md-5">The Past</h3>
+          <ul>
+          <%= for event <- @past_events do
+            content_tag :li, class: "mb-3" do
+              raw "#{safe_to_string(content_tag :a, event.name, href: event.link)}"
+            end
+          end %>
+          </ul>
+        </div>
       </div>
-      <div class="col-lg">
-        <p>Keep me updated</p>
-        <subscriber-form location="events" type="chicode">
+      <div class="mt-5">
+        <div>
+          <p class="ml-1">Keep me updated</p>
+          <subscriber-form location="events" type="chicode">
+        </div>
       </div>
     </div>
   </section>
