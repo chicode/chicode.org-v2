@@ -5,6 +5,10 @@
   <th>Lastname</th>
   <th>School</th>
   <th>Grade</th>
+  <th>Email</th>
+  <th>Role</th>
+  <th>Gender</th>
+  <th>Ethnicity</th>
 </tr>
 <%= for signup <- @signups do %>
   <tr>
@@ -14,6 +18,8 @@
     <td><%= signup.grade %></td>
     <td><%= signup.email %></td>
     <td><%= signup.role %></td>
+    <td><%= signup.gender %></td>
+    <td><%= signup.ethnicity %></td>
   </tr>
 <% end %>
 </table>
