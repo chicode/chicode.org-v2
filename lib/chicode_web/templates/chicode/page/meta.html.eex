@@ -5,13 +5,3 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Chicode" />
 <meta property="og:description" content="A coding organization by CPS students, for CPS students." />
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106173544-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-106173544-5');
-</script>
