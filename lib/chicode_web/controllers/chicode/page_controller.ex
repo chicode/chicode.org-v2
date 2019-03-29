@@ -7,6 +7,10 @@ defmodule ChicodeWeb.Chicode.PageController do
     render(conn, "index.html", events: events(), past_events: past_events())
   end
 
+  def clubs(conn, _params) do
+    render(conn, "clubs.html")
+  end
+
   defp events() do
     [%{date: "May 24", name: "~AI Competition~"}]
   end

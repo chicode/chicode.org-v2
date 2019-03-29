@@ -52,7 +52,7 @@
       <p class="h3 clubs__top text-blue text-center mt-6 mb-5">ALSO OUR</p>
       <div class="d-flex w-100 justify-content-around mb-6">
         <img src="<%= image(@conn, "arrow-right.svg") %>">
-        <a class="clubs__pack" href="">CLUB BOOSTER PACK</a>
+        <a class="clubs__pack" href="/clubs">CLUB BOOSTER PACK</a>
         <img src="<%= image(@conn, "arrow-left.svg") %>">
       </div>
       <p class="h5 clubs__bottom text-center mb-5">provides everything you need to start a club</p>
