@@ -18,6 +18,7 @@ defmodule ChicodeWeb.Router do
     get "/", PageController, :index
     get "/slack", PageController, :slack
     get "/clubs", PageController, :clubs
+    get "/teacher", PageController, :teacher
   end
 
   scope "/", ChicodeWeb.Challenge, host: "challenge.chicode.org" do

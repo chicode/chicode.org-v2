@@ -27,4 +27,11 @@ defmodule ChicodeWeb.Chicode.PageController do
       external: "https://join.slack.com/t/chicode/signup"
     )
   end
+
+  def teacher(conn, _params) do
+    redirect(conn,
+      external:
+        "https://docs.google.com/forms/d/e/1FAIpQLSfZwqiyZvVGAG_sJQAbz2Qi89w2nCeSbtRCuDEOBh1I_UlUrA/viewform?usp=sf_link"
+    )
+  end
 end
