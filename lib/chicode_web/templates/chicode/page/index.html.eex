@@ -49,12 +49,7 @@
   <section>
     <img class="w-100 mx-auto mb-7" src="<%= image(@conn, "clubs.svg") %>"> <img class="w-75 mx-auto mb-5" src="<%= image(@conn, "club.png") %>"> <p class="text-center w-75 mx-auto">Clubs give students a more intimate community to code with, bringing together schools. They meet more often than events and so have a more informal atmosphere.</p>
     <div class="font-chicago">
-      <p class="h3 clubs__top text-blue text-center mt-6 mb-5">ALSO OUR</p>
-      <div class="d-flex w-100 justify-content-around mb-6">
-        <img src="<%= image(@conn, "arrow-right.svg") %>">
-        <a class="clubs__pack" href="/clubs">CLUB BOOSTER PACK</a>
-        <img src="<%= image(@conn, "arrow-left.svg") %>">
-      </div>
+      <p class="h3 clubs__top text-blue text-center mt-6 mb-5">Our Club Booster Pack</p>
       <p class="h5 clubs__bottom text-center mb-5">provides everything you need to start a club</p>
       <div class="clubs__vine">
         <div class="stem"></div>
@@ -62,9 +57,16 @@
         <div class="cherry middle"><p>teaching resources</p></div>
         <div class="cherry side"><p>your very own website</p></div>
       </div>
+      <div class="d-flex w-100 justify-content-around mb-6">
+        <img src="<%= image(@conn, "arrow-right.svg") %>">
+        <a class="clubs__pack" href="mailto:hello@chicode.net?Subject=Club%20Booster%20Pack">REACH OUT FOR MORE INFO</a>
+        <img src="<%= image(@conn, "arrow-left.svg") %>">
+      </div>
     </div>
   </section>
 </div>
+
+<!--
 
 <section class="bg-orange pb-1">
   <marquee class="font-chicago">and of course our free open-source community-powered beautiful awesome cutting-edge educational platform which will become an entire community in its own right</marquee>
@@ -79,11 +81,12 @@
   </div>
   <button class="cw__button"><a href="https://codingworkshops.org">JOIN</a></button>
 </section>
+-->
 
 <div class="container">
   <section class="w-75 mx-auto">
     <h2 class="mb-5 h2-section">But why?</h2>
-    <pre><code>&gt;&gt;&gt; <span class="p">all</span>([<span class="p">student</span>.<span class="p">can_code</span>() <span class="p">for student in chicago_students</span>])
+    <pre><code>&gt;&gt;&gt; <span class="p">all</span>(<span class="p">student</span>.<span class="p">can_code</span>() <span class="p">for student in chicago_students</span>)
 <span class="y">True</span></code></pre>
     <p class="pl-3">Our city has a problem - many young people are hesitant to approach coding. And it’s not because they aren’t “the right type of person”, but because they were never told they could do it and have fun at the same time.</p>
 

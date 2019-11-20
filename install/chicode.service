@@ -7,7 +7,7 @@ User=ubuntu
 WorkingDirectory=/home/ubuntu/chicode.org-v2
 Environment="HOME=/home/ubuntu"
 Environment="MIX_ENV=prod"
-ExecStart=/usr/local/bin/elixir --cookie [[COOKIE]] --sname chicode -S mix phx.server
+ExecStart=/usr/bin/elixir -S mix phx.server
 ExecReload=/bin/kill $MAINPID
 KillMode=process
 Restart=on-failure

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Karla|Muli");
 @import "./fonts/chicago.css";
 @import "./fonts/hermit.css";
- 
+
 $font-family-sans-serif: Karla;
 
 $colors: (
@@ -90,7 +90,7 @@ workshops__chris{
 
 .subscriber-form {
   .form {
-    
+
     justify-content: flex-start;
     @extend .button-formal;
     width: 95%;
@@ -120,6 +120,7 @@ workshops__chris{
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 100px;
 
   .stem {
     @extend .stretch;
@@ -194,7 +195,7 @@ workshops__chris{
   .display-1 {
     font-size: 3.25rem;
   }
-  
+
   p {
     font-size: 1.25rem;
   }
@@ -214,12 +215,12 @@ workshops__chris{
   .mt-7 {
     margin-top: 3rem;
   }
-  
+
   //too hard to display code on mobile
   pre {
     display:none
   }
-  
+
   .subscriber-form {
     .form {
       display: block !important;
@@ -286,6 +287,7 @@ workshops__chris{
   }
 
   .clubs__vine {
+    margin-bottom: 50px;
     width: 100%;
 
     .stem {

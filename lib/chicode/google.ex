@@ -12,8 +12,8 @@ defmodule Google do
       site: "https://accounts.google.com",
       authorize_url: "/o/oauth2/auth",
       token_url: "/o/oauth2/token",
+      # TODO fix so it works with multiple hosts
       redirect_uri:
-        # TODO fix so it works with multiple hosts
         if Application.get_env(:chicode, :env) == :dev do
           "http://localhost:4000/sign-in"
         else
