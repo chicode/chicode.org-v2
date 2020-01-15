@@ -17,7 +17,7 @@ defmodule Google do
         if Application.get_env(:chicode, :env) == :dev do
           "http://localhost:4000/sign-in"
         else
-          "https://portal.jonesjam.org/sign-in"
+          "https://jonesjam.org/sign-in"
         end
     ]
   end
