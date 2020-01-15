@@ -17,7 +17,7 @@
           <%= for event <- @events do
             content_tag :li, class: "mb-3" do
               if Map.has_key?(event, :link) do
-                raw "#{safe_to_string(content_tag :a, event.name, href: event.link)}"
+                raw "#{safe_to_string(content_tag :a, "#{event.date}: #{event.name}", href: event.link)}"
               else
                 "#{event.date}: #{event.name}"
               end
@@ -31,7 +31,11 @@
           <ul>
           <%= for event <- @past_events do
             content_tag :li, class: "mb-3" do
-              raw "#{safe_to_string(content_tag :a, event.name, href: event.link)}"
+              if Map.has_key?(event, :link) do
+                raw "#{safe_to_string(content_tag :a, "#{event.name}", href: event.link)}"
+              else
+                "#{event.name}"
+              end
             end
           end %>
           </ul>

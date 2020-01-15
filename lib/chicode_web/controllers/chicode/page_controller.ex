@@ -12,12 +12,15 @@ defmodule ChicodeWeb.Chicode.PageController do
   end
 
   defp events() do
-    [%{date: "May 24", name: "~AI Competition~"}]
+    [
+      %{date: "January 31", name: "JonesJam 2020", link: "https://jonesjam.org"},
+      %{date: "May 24", name: "~AI Competition~"}
+    ]
   end
 
   defp past_events() do
     [
-      %{date: "May 5", name: "Jones Jam", link: "https://jonesjam.org"},
+      %{date: "February 1", name: "JonesJam 2019"},
       %{date: "May 19-20", name: "event0", link: "https://event0.chicode.org"}
     ]
   end
