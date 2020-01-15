@@ -3,18 +3,5 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
-  <component name="SbtLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="$USER_HOME$" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../../play-scala-slick-example" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../play" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../play-quill" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../robot" value="PREVIEW" />
-      </map>
-    </option>
-  </component>
-  <component name="ScalaSbtSettings">
-    <option name="customVMPath" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="Elixir 1.7.4" project-jdk-type="Elixir SDK" />
 </project>

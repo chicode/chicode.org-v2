@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Server" type="MixRunConfigurationType" factoryName="Elixir Mix">
+    <mix>
+      <argument>phx.server</argument>
+    </mix>
+    <envs>
+      <env name="DEV_HOST" value="jonesjam.org" />
+    </envs>
+    <module-filters inherit-application-module-filters="true" />
+    <method v="2" />
+  </configuration>
+</component>
