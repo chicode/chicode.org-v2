@@ -87,3 +87,57 @@ section {
 .subheading {
   margin-left: 1rem;
 }
+
+@include media-breakpoint-down(lg) {
+  body {
+    font-size: 2rem;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .signup .form {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+
+    button {
+      width: 75%;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .header-image {
+    width: 50%;
+  }
+
+  .signup .form {
+    input {
+      margin: 0.5rem auto;
+    }
+  }
+
+  .github {
+    width: 50%;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  html {
+    font-size: 60%;
+  }
+
+  .signup {
+    margin: 0.5rem;
+  }
+
+  footer {
+    margin: 1rem !important;
+  }
+}

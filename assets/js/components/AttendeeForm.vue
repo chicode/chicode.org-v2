@@ -1,21 +1,21 @@
 <template>
   <div class="form">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <input name="first_name" placeholder="first name" v-model="data.first_name"/>
         <p class="error" v-if="this.errors.first_name">{{ this.errors.first_name[0] }}</p>
       </div>
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <input name="last_name" placeholder="last name" v-model="data.last_name"/>
         <p class="error" v-if="this.errors.last_name">{{ this.errors.last_name[0] }}</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <input name="school" placeholder="school" v-model="data.school"/>
         <p class="error" v-if="this.errors.school">{{ this.errors.school[0] }}</p>
       </div>
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <input
                 max="12"
                 min="6"

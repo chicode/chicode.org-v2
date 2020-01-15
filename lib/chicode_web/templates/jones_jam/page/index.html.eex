@@ -10,7 +10,7 @@
 
 <section class="signup mb-6">
   <h2>Sign up! (current CPS students only)
-  <attendee-form image="<%= image(@conn, "google.svg") %>" success-location="<%= Google.authorize_url! %>" class="mt-5 character-form">
+  <attendee-form image="<%= image(@conn, "google.svg") %>" success-location="<%= Google.authorize_url! %>" class="mt-5 character-form" />
 </section>
 
 <section class="schedule">
@@ -33,9 +33,9 @@
 </section>
 </div>
 
-<footer class="mt-7 m-5">
+<footer class="m-3 mt-7">
   <div class="d-flex align-items-center m-3">
     <a href="https://chicode.org" class="mr-3"><img style="height: 2rem;" src="<%= image(@conn, "chicode.svg") %>"></a>
-    <a href="https://github.com/chicode"><img src="<%= image(@conn, "github.svg") %>"></a>
+    <a href="https://github.com/chicode"><img class="github" src="<%= image(@conn, "github.svg") %>"></a>
   </div>
 </footer>
