@@ -30,7 +30,7 @@ defmodule Google do
     |> OAuth2.Client.new()
   end
 
-  def authorize_url!(params \\ [scope: "email", a: "asd"]) do
+  def authorize_url!(params \\ [scope: "email"]) do
     OAuth2.Client.authorize_url!(client(), params)
   end
 

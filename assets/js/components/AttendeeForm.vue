@@ -35,13 +35,13 @@
 </template>
 
 <script>
-  import _ from 'lodash'
+import _ from 'lodash'
 
-  const toObject = _.curry((keyFunc, valFunc, input) =>
-          _.zipObject(_.map(keyFunc, input), _.map(valFunc, input)),
-  );
+const toObject = _.curry((keyFunc, valFunc, input) =>
+        _.zipObject(_.map(keyFunc, input), _.map(valFunc, input)),
+);
 
-  const properties = ['firstname', 'lastname', 'school', 'grade'];
+const properties = ['firstname', 'lastname', 'school', 'grade'];
 
 export default {
   name: 'AttendeeForm',
@@ -55,6 +55,10 @@ export default {
   },
   methods: {
     async submit() {
+      this.data.head = 0
+      this.data.torso = 0
+      this.data.legs = 0
+      this.data.role = 'student'
       const resp = await fetch('/', {
         method: 'post',
         body: JSON.stringify(this.data),

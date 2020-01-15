@@ -35,6 +35,7 @@ defmodule ChicodeWeb.Router do
 
     get "/", PageController, :index
     post "/", PageController, :new
+    get "/sign-in", PageController, :thank_you
     get "/thank-you", PageController, :thank_you
     get "/signups", PageController, :signups
   end

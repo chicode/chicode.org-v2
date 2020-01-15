@@ -31,17 +31,26 @@ defmodule ChicodeWeb.JonesJam.PageController do
         redirect(conn, to: "/")
     else
       client ->
-        %{"email" => email} =
-          OAuth2.Client.get!(client, "https://www.googleapis.com/oauth2/v1/userinfo").body
+        # this is so weird...the access token isn't an actual token, but a json
+        # this messy code has to do with the "sunsetting" of the google plus api
+        # https://stackoverflow.com/a/24510214
+        token = Map.get(Poison.decode!(client.token.access_token), "access_token")
+        {:ok, response} = HTTPoison.get(
+          "https://www.googleapis.com/oauth2/v2/userinfo",
+          ["Authorization": "Bearer #{token}"]
+        )
+        email = Map.get(Poison.decode!(response.body), "email")
 
-        valid? = email |> String.split("@") |> List.last() == "cps.edu"
+        valid? = email
+                 |> String.split("@")
+                 |> List.last() == "cps.edu"
 
         exists? =
           not valid? or
-            case Chicode.Repo.get_by(Chicode.Attendee, email: email) do
-              nil -> false
-              _ -> true
-            end
+          case Chicode.Repo.get_by(Chicode.Attendee, email: email) do
+            nil -> false
+            _ -> true
+          end
 
         if valid? and not exists? do
           case get_session(conn, :changeset) do
