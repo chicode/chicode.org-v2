@@ -1,33 +1,25 @@
 @import './fonts/chicago.css';
 @import './fonts/helvetica.css';
 
-$headings-font-family: Chicago;
+$font-family-base: Pixellari;
 
 $colors: (
-  "red": #FF3B50,
-  "yellow": #F3E45C,
-  "purple": #6461FF,
-  "light-red": #FF6172,
-  "light-yellow": #FFDD9B,
-  "light-purple": #C8C7FF,
-  "dark-yellow": #F2C215,
-  "green": #6FCF97,
-  "black": black,
-  "white": white,
+        "purple": #C8C7FF,
+        "pink": #C8537B,
+        "light-pink": #FEF5F8,
+        "blue": #467FA6,
 );
 
-$h1-font-size: 6rem;
 $h2-font-size: 3rem;
-$h3-font-size: 3rem;
-$h4-font-size: 1.5rem;
+$font-size-base: 2.5rem;
 
 $spacers: (
-  6: 5rem,
-  7: 10rem,
+        6: 5rem,
+        7: 10rem,
 );
 
 $sizes: (
-  60: 60%
+        60: 60%
 );
 
 @import "../node_modules/bootstrap/scss/bootstrap-grid";
@@ -39,265 +31,60 @@ $sizes: (
 @import "../node_modules/bootstrap/scss/mixins/_breakpoints";
 @import "./app.scss";
 
-.family-helvetica {
-  font-family: Helvetica;
-}
-
-.container {
-  position: relative;
-}
-
-@include media-breakpoint-down(md) {
-  .container {
-    max-width: 100%;
-  }
-}
-
 body {
-  font-family: Chicago;
-}
-
-.sm-shadow {
-  box-shadow: -4px 5px 0 black;
-}
-
-.lg-shadow {
-  box-shadow: -4px 11px 0 black;
+  background-image: url("/images/jonesjam/background.svg");
+  background-repeat: repeat;
+  padding-top: 5rem;
 }
 
 section {
-  margin-top: 4rem;
-  text-align: center;
-
-  h3 {
-    margin-top: 10rem;
-  }
+  margin-bottom: 4rem;
 }
 
-h1, h2, h3, h4, h5 {
-  text-align: center;
-}
-
-p {
-  font-size: 1.5rem;
-}
-
-button img {
-  display: inline-block;
-}
-
-.w-80 {
-  width: 80%;
-}
-
-.interest-box {
-  display: inline-block;
-  padding: 8px;
-  border: 5px solid black;
-  border-radius: 5px;
+.signup {
+  padding: 2rem;
+  background: white;
+  box-shadow: -5px 10px map_get($colors, "pink");
 
   .form {
-    background: hsl(0, 0%, 95%);
+    width: 75%;
     margin: auto;
-    padding: 5px;
   }
-}
-
-.character-form {
-  margin: auto;
-  width: 70%;
 
   input, button {
-    @extend .sm-shadow;
-    margin: auto;
-    background: map_get($colors, "light-purple");
-    padding: 0.4rem 0.5rem;
-    color: black;
-  }
+    background: map_get($colors, "purple");
+    max-width: 80%;
+    margin: 1rem auto;
+    padding: 0 0.5rem;
 
-  .row {
-    margin-bottom: 1rem;
-  }
-
-  button {
     img {
-      vertical-align: text-bottom;
+      width: 2rem;
+      vertical-align: initial;
     }
   }
 
-  p {
-    font-size: 1rem;
-    margin-bottom: 0;
-    margin-top: 0.3rem;
-  }
-
-  input {
-    width: 75%; // fix for number input being small
+  button {
+    padding-top: 0.3rem;
   }
 }
 
-.floating-image {
-  position: absolute;
-  &.left {
-    left: 0;
-    margin-left: 3rem;
-  }
-  &.right {
-    right: 0;
-    margin-right: 3rem;
-  }
-}
-
-#cash-moving {
-  position: absolute;
-  width: 150vw;
-  right: -25vw;
-  .cash {
-    font-size: 2rem;
-    background-color: map_get($colors, "green");
- box-shadow: -2px 5px 0px #000000;
-    width: 6rem;
-    position: absolute;
-  }
-}
-
-#cash-fill > h3 {
-  font-size: $h1-font-size;
-}
-
-.cash-info {
-  ul > li {
-    font-size: 1.5rem;
-  }
-  ul > li::before {
-    content: "•";
-    color: map_get($colors, "light-red");
-    display: inline-block;
-    width: 1.5rem;
-    margin-left: 1rem;
-    font-size: 1.5rem;
-  }
-}
-
-.schedule {
-  font-size: $h4-font-size;
+.schedule ul {
   display: inline-block;
   text-align: left;
   line-height: 2rem;
 
   .time {
-    @extend .sm-shadow;
-    background: map_get($colors, "light-red");
+    background: map_get($colors, "pink");
     color: white;
     margin-right: 1rem;
     padding: 0.2rem 0.5rem;
   }
 
   > * {
-    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
   }
 }
 
-#character {
-  width: 100%;
-  max-width: 500px;
-}
-
-.header-image {
-  width: 400px;
-}
-
-.header {
-  margin-top: 25vh;
-  margin-bottom: 25vh;
-}
-
-label {
-
-  input[type="radio"] {
-    display:none;
-  }
-
-  span {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    display: block;
-    background-color: white;
-    border-radius: 100%;
-    border: 3px solid black;
-  }
-
-  input[type="radio"]:checked + span {
-    background-color: map_get($colors, "light-purple")
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  //because boostrap doesn't support responsive font-size
-  h1 {
-    font-size: 5rem;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  h3 {
-    font-size: 2.5rem;
-  }
-
-  h4 {
-    font-size: 1rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  li {
-    font-size: 1rem;
-  }
-
-  .header-image {
-    width: 250px;
-  }
-
-  .header {
-    margin-top: 10vh;
-    margin-bottom: 5vh;
-  }
-
-  .row {
-    margin-bottom: 0;
-  }
-
-  .col-sm {
-    margin-bottom: 10px;
-  }
-
-  .npc-img {
-    margin-top: -7rem;
-  }
-
-  #cash-fill {
-    h3 {
-      font-size: 3rem;
-    }
-  }
-
-  .cash-info {
-    ul > li {
-      font-size: 1rem;
-    }
-    ul > li::before {
-      width: 1.5em;
-      margin-left: 1rem;
-      font-size: 1rem;
-    }
-  }
-}
-
-.error {
-  color: map_get($colors, dark-yellow);
+.subheading {
+  margin-left: 1rem;
 }

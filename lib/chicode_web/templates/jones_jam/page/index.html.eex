@@ -1,91 +1,41 @@
 <div class="container">
 
+<section class="logo">
+  <img class="mx-auto header-image" src="<%= image(@conn, "logo.png")%>" alt="Jones Jam">
+</section>
+
 <section class="header">
-<img class="mx-auto header-image" src="<%= image(@conn, "logo.svg")%>">
-<h1>Jones Jam</h1>
-<h2 class="text-red">February 1</h2>
+  <h2>The yearly CPS game jam is back! Join us at <span class="text-blue">Jones College Prep</span> on <span class="text-blue">January 31</span> for a day of pixel art and coding.</h2>
 </section>
 
-<section class="text-center">
-  <h3 class="mb-3">what is a “<span class="text-red">game</span>”?</h3>
-  <p class="mb-5 mx-auto w-75">that’s the question we’re asking you at Jones&nbsp;Jam.</p>
-  <img class="mx-auto w-75" src="<%= image(@conn, "game-definition.svg") %>">
-  <p class="mt-5 mx-auto w-75">you’ll have <span class="text-red">12 hours</span> to show us YOUR most creative interpretation, given a specific theme*</p>
-  <p class="small text-right mr-3">*announced the day of the event</p>
-</section>
-
-<section class="text-center">
-  <h3>Interested?</h3>
-  <h4>create a character to sign up</h4>
-  <canvas id="character" class="mx-auto" width="500px" height="200px" onload="onCanvasLoad()"></canvas>
+<section class="signup mb-6">
+  <h2>Sign up! (current CPS students only)
   <attendee-form image="<%= image(@conn, "google.svg") %>" success-location="<%= Google.authorize_url! %>" class="mt-5 character-form">
 </section>
 
-<section>
-  <!-- TODO install helvetica bold -->
-  <h3 class="family-helvetica mb-5">Answers for Humanity</h3>
-  <img class="mx-auto w-75 mt-5" src="<%= image(@conn, "cards-for-humanity.svg") %>">
-</section>
-
-<section>
-  <div id="cash-moving" class="row no-gutters">
-  </div>
-  <div id="cash-fill" class="d-flex" onload="generateCash()">
-    <!--div to make spacing correct, hacky but works-->
-    <h3 class="mx-auto justify-content-center">Chicash</h3>
-  </div>
-  <div class="mx-auto w-75 cash-info">
-    <p class="mt-5 text-left">Throughout the event, collect Chicash, our in-game currency.</p>
-    <p class="mt-4 text-left">Earn it by:</p>
-    <ul class="text-left">
-      <li>Making progress on your game</li>
-      <li>Helping other people out with bugs</li>
-      <li>Joining in activities</li>
-      <li>Arriving early</li>
-    </ul>
-
-    <p class="mt-4 text-left">Spend it on:</p>
-    <ul class="text-left">
-      <li>Snacks</li>
-      <li>T-shirts</li>
-      <li>Loot boxes</li>
-      <li>and much, much more!</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h3 class="mb-5">Where and When</h3>
- <img class="mx-auto w-75 mb-5" src='https://api.mapbox.com/v4/mapbox.light/pin-l-school+ff3c50(-87.627905,41.873083)/-87.627905,41.873083,16/1000x600@2x.png?access_token=pk.eyJ1IjoiY21zcGFya3MiLCJhIjoiY2pobnlzeGx5M3c4azM2czI5eGdodmpuNyJ9.puEaL9vcOCFzRSbciaeRKQ' >
-
-  <p class="mx-auto w-75">Get to Jones College Prep by 8 AM on Friday, February 1st. Jones College Prep is located at <span class="text-red">700 South State Street</span>. It is in the Printers Row area of the South Loop, near State St. and Congress Pkwy., or at the Harrison stop on the Red Line.</p>
-</section>
-
-<section>
-  <h3 class="mb-5">Complete Schedule</h3>
-  <ul class="schedule">
+<section class="schedule">
+  <h2 class="subheading">Full Schedule</h2>
+  <ul>
     <li><span class="time">07:30</span>doors open</li>
     <li><span class="time">08:00</span>opening ceremony</li>
-    <li><span class="time">09:00</span>“intro to game dev with python” workshop</li>
-    <li><span class="time">10:00</span>“pixel art” workshop</li>
+    <li><span class="time">09:00</span>“bad aesthetics of wonky pixel art” workshop</li>
+    <li><span class="time">10:00</span>coding workshops</li>
     <li><span class="time">12:00</span>lunch</li>
-    <li><span class="time">03:00</span>act out a play generated with machine-learning!</li>
+    <li><span class="time">03:00</span>hacking tournament</li>
     <li><span class="time">05:00</span>dinner</li>
     <li><span class="time">07:00</span>project fair &amp; closing ceremony</li>
   </ul>
 </section>
 
 <section>
-  <img class="floating-image right npc-img" src="<%= image(@conn, "npc.svg") %>">
-  <h3 class="mb-5">NPCs, look here</h3>
-  <h4>If you would like to help us by sponsoring, mentoring, or something else, please reach out to jonesjam@chicode.net</h4>
+  <h2 class="subheading">More Questions?</h2>
+  <p>If you would like to help us by sponsoring, mentoring, or something else, please reach out to <span class="text-blue">hello@chicode.net</span></p>
 </section>
 </div>
 
-<footer class="mt-7">
-  <img class="mx-auto mb-4 w-50" src="<%= image(@conn, "wiggly.svg") %>">
-  <div class="d-flex justify-content-center align-items-center m-3">
-    <a href="https://chicode.org"><img style="height: 2rem;" src="<%= image(@conn, "chicode.svg") %>"></a>
-    <p class="h6 ml-5">we believe in FOSS, so all of our code is available on <a href="https://github.com/chicode/">github</a>. send us a PR!</p>
+<footer class="mt-7 m-5">
+  <div class="d-flex align-items-center m-3">
+    <a href="https://chicode.org" class="mr-3"><img style="height: 2rem;" src="<%= image(@conn, "chicode.svg") %>"></a>
+    <a href="https://github.com/chicode"><img src="<%= image(@conn, "github.svg") %>"></a>
   </div>
 </footer>
