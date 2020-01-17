@@ -1,25 +1,21 @@
-<h1>Total: <%= length @signups %></h1>
-<table style="width:100%">
-<tr>
-  <th>Firstname</th>
-  <th>Lastname</th>
-  <th>School</th>
-  <th>Grade</th>
-  <th>Email</th>
-  <th>Role</th>
-  <th>Gender</th>
-  <th>Ethnicity</th>
-</tr>
-<%= for signup <- @signups do %>
+<div class="signups">
+  <h1>Total: <%= length @signups %></h1>
+  <table style="width:100%">
   <tr>
-    <td><%= signup.first_name %></td>
-    <td><%= signup.last_name %></td>
-    <td><%= signup.school %></td>
-    <td><%= signup.grade %></td>
-    <td><%= signup.email %></td>
-    <td><%= signup.role %></td>
-    <td><%= signup.gender %></td>
-    <td><%= signup.ethnicity %></td>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>School</th>
+    <th>Grade</th>
+    <th>Email</th>
   </tr>
-<% end %>
-</table>
+  <%= for signup <- @signups do %>
+    <tr>
+      <td><%= signup.first_name %></td>
+      <td><%= signup.last_name %></td>
+      <td><%= signup.school %></td>
+      <td><%= signup.grade %></td>
+      <td><%= signup.email %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
